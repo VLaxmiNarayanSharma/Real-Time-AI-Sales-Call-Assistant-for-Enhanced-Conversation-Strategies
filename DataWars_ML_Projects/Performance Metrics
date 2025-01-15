@@ -1,0 +1,63 @@
+Now, let's separate the target and the features into two variables.
+
+1
+Separate the target and the features into two variables.
+
+We will not working with 'Unnamed: 32' and 'id' variables.
+
+Store the features in X and the target y.
+
+Correct!
+Start project before checking your activities.
+
+2
+Use train_test_split to split the data into training and testing sets. Split the dataset in 80% training, 20% testing, and random_state=0.
+
+Set the random_state parameter to a desired integer value for reproducibility.
+
+Store the values in the variables in X_train,X_test,y_train and y_test.
+
+Correct!
+Start project before checking your activities.
+
+Let's employ the k-Nearest Neighbors (KNN) algorithm to predict the type of monster.
+
+k-Nearest Neighbors (KNN) is a machine learning algorithm commonly used for classification and regression tasks. In the context of classification, it works by identifying the class of an unknown instance based on the classes of its nearest neighbors in the feature space. KNN assigns a label to a data point based on the majority class among its k-nearest neighbors. The value of k is a hyperparameter that can be adjusted to achieve the desired level of accuracy. In regression tasks, KNN predicts a continuous target variable based on the average of the values of its k-nearest neighbors. As you progress through future tracks, you will delve into the details of various machine learning models, including KNN, and gain practical experience with their applications.
+
+You will need to import :
+
+from sklearn.neighbors import KNeighborsClassifier
+3
+KNeighborsClassifier
+
+Create an instance of the KNeighborsClassifier and store the model in knn. Use the argument for default.
+
+Correct!
+Start project before checking your activities.
+
+4
+Train a KNeighborsClassifier
+
+It's time to train the KNeighborsClassifier using the training dataset.
+
+Correct!
+Start project before checking your activities.
+
+5
+Make predictions on the test set
+
+Use the trained model to make predictions on the test data. Store the prediction in y_pred.
+
+Correct!
+Start project before checking your activities.
+
+Let's evaluate the model performance using scikit-learn library in Python.
+
+6
+Evaluation metric
+
+Calculate the f1-score of the testing set and run the code in a Jupyter Notebook.
+
+Store the results in the variable f1_score_test .
+
+Correct!
