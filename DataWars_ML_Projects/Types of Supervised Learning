@@ -1,0 +1,74 @@
+Quiz
+Respond to the following questions to check your knowledge.
+
+1
+What is the difference between supervised and unsupervised machine learning?. Which of the following statements are true?
+
+
+Supervised learning is used when we want to predict a certain outcome from a given input.
+
+
+There are two major types of supervised learning problems, called clustering and regression.
+
+
+Supervised learning problems can be grouped into clustering and association.
+
+
+The goal for unsupervised learning is to model the underlying structure or distribution in the data.
+
+Correct!
+Start project before checking your activities.
+
+2
+Select which of the following scenarios are regression problems.
+
+
+Given a tweet, determine whether or not it contains text against or on favor for a presidential candidate.
+
+
+Predict how much a company will spend on electricity the next semester.
+
+
+Predict whether a user will churn from the service.
+
+
+Predict the score that a student will achieve in an exam whose grade can be 0.1, 2,. . . , 10
+
+Correct!
+Start project before checking your activities.
+
+3
+Select which of the following scenarios are classification problems.
+
+
+An algorithm is trained to recognize spam email by learning the characteristics of what constitutes spam vs non-spam email.
+
+
+Determine whether a customer is likely to purchase more items or not
+
+
+Impact of blood alcohol content on coordination
+
+
+Predict the prices of a house in Boston based on zipcode, neighbourhood, the per capita crime rate by town, etc
+
+Correct!
+Start project before checking your activities.
+
+4
+Suppose you want to develop a supervised machine learning model to predict whether a superhero will fly or not. Which of the following statements are true?
+
+
+A classification model provide the best approach.
+
+
+We'll use unlabeled examples to train the model.
+
+
+This is not a machine learning problem
+
+
+A regression model is the best way to predict the probability to fly.
+
+Correct!
+Start project before checking your activities.
