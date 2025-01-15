@@ -1,0 +1,27 @@
+Quiz
+In summary, this theoretical lab focuses on a case study involving machine learning for predicting customer churn in the telecom industry. The case study emphasizes the importance of developing a machine learning model to predict customer churn using historical data and relevant features. Additionally, key questions are outlined to guide the analysis and modeling process effectively, covering problem formulation, data understanding, feature selection, model selection, model evaluation, hyperparameter tuning, and interpretability. Lastly, predicting churn is acknowledged as a challenging task due to its subjective nature, influenced by various factors, making it difficult to achieve high model performance compared to other machine learning tasks.
+
+Now, let's answer four true/false questions based on the provided content:
+
+1
+True/False: The primary goal of the case study is to understand the practical aspects of applying machine learning techniques to predict and mitigate customer churn.
+
+
+True
+
+
+False
+
+Correct!
+Start project before checking your activities.
+
+2
+True/False: The dataset for this case study includes customer demographics, usage patterns, contract details, and customer service interactions.
+
+
+False
+
+
+True
+
+Correct!
