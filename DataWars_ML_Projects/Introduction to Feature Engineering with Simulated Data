@@ -1,0 +1,43 @@
+Feature Engineering Techniques
+1
+Encoding Categorical Variables
+
+Use get_dummies function to convert categorical variables into numerical representations that can be understood by machine learning models.
+
+Store the dataframe with the encoded categorical variables and the numerical one in df_encoded.
+
+Correct!
+Start project before checking your activities.
+
+2
+Handling Missing Values
+
+Identify and handle missing values in the dataset df_encoded. This can be done by filling missing values with mean, median, or mode, or by removing rows or columns with missing values.
+
+Select the correct code to replace the missing values for the mean value.
+
+
+df_filled = df_encoded.fillna(df_encoded.mean())
+
+
+df_filled = df_encoded.fill(df_encoded.mean())
+
+
+df_filled = df.fillna(df_encoded.mean())
+
+
+df_filled = df_encoded.fillna(df_encoded.median())
+
+Correct!
+Start project before checking your activities.
+
+3
+Creating New Features
+
+In this activity, we are adding three new derived features to the DataFrame df_filled. The first line calculates the squared value of Numeric and assigns it to the new column Feature1_squared. The second line calculates the cubed value of Numeric and assigns it to the new column Feature2_cubed. Finally, the third line calculates the natural logarithm of Numeric using np.log() function and assigns it to the new column Feature3_log.
+
+The activity show Runtime warning because we can only take log of positive values but the dataset also has some null, 0 or negative values.
+
+Correct!
+Start project before checking your activities.
+
