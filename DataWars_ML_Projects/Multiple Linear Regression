@@ -1,0 +1,76 @@
+Model Building
+EDA analysis
+Let's separate the target and the features into two variables.
+
+1
+Separate the target and the features into two variables.
+
+We will work only with Volume, Weight and CO2 variables.
+
+Store the features in X and the target y.
+
+Correct!
+Start project before checking your activities.
+
+Plot the relationship of CO2 with other variables.
+
+sns.pairplot(df, x_vars=['Weight', 'Volume'], y_vars='CO2', height=4, aspect=1, kind='scatter')
+plt.show()
+
+Preview
+Let's calculate the correlation matrix with the numerical variables in the notebook.
+
+sns.heatmap(df[['Weight', 'Volume','CO2']].corr(), annot = True, cmap = 'coolwarm')
+plt.show()
+
+Preview
+Model Building
+Let's split the dataset into train and test sets. The argument test_size is a float value whose value ranges between 0.0 and 1.0, which represents the proportion of our test size. its default value is none. The train_size argument is similar to test_size, but it represents the proportion of our train size.
+
+2
+Use train_test_split to split the data into training and testing sets. Split the dataset in 80% training, 20% testing, and random_state=0.
+
+Set the random_state parameter to a desired integer value for reproducibility. Store this variable in random_state and then used in the function.
+
+Store the values in the variables in X_train,X_test,y_train and y_test.
+
+Correct!
+Start project before checking your activities.
+
+To implement linear regression in Python, you will need to import the following module:
+
+from sklearn.linear_model import LinearRegression
+3
+Linear Regression
+
+Create an instance of the LinearRegression and store the model in lr.
+
+Correct!
+Start project before checking your activities.
+
+4
+Train the linear regression model
+
+It's time to train the linear regression model using the training dataset.
+
+Correct!
+Start project before checking your activities.
+
+5
+Make predictions on the test set
+
+Use the trained model to make predictions on the test data. Store the prediction in y_pred.
+
+Correct!
+Start project before checking your activities.
+
+Let's Visualize the Predictions versus the real values.
+
+Let's run the code in the notebook.
+
+plt.scatter(y_pred, y_test, color='blue', label='1:1 relation')
+plt.ylabel('observed')
+plt.xlabel('predicted')
+plt.title('Regression analysis')
+plt.legend()
+plt.show()
