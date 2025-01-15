@@ -1,0 +1,95 @@
+1
+Did you find any missing value?
+
+Calculate the percentage of missing values.
+
+
+Yes, there is 5% of missing values
+
+
+No, data does not contain missing values
+
+
+Yes, there is 10% of missing values for each variable
+
+Correct!
+Start project before checking your activities.
+
+Handling Missing Values
+Drop missing values
+2
+Drop rows with missing values
+
+Drop rows with missing values, and store the new dataframe in data_dropna.
+
+Correct!
+Start project before checking your activities.
+
+Dropping NaN values can be a good choice in the following scenarios:
+
+When the percentage of missing values is small.
+When missing values are completely random.
+When missing values are not informative.
+However, it is important to carefully consider the impact of dropping NaN values, as it can potentially lead to the loss of valuable information and reduce the representativeness of the dataset. Additionally, the decision to drop NaN values should be made based on the specific context and goals of the analysis.
+
+In this example, after dropping null values, the size of the dataset is reduced by 40%. Therefore, it may not be a good idea to lose all this information. Let's explore alternative methods for dealing with null values.
+
+Replace missing values
+We could use the mode and mean to fill missing values in this dataset based on their data type and characteristics:
+
+Mode (categorical variables like 'Sex' and 'University Degree'): The mode represents the most frequently occurring value in a categorical variable. It is appropriate to use the mode to fill missing values in categorical variables because it helps preserve the distribution of the existing values and is more representative of the overall category.
+
+Mean (numerical variables like 'Age' and 'Salary'): The mean represents the average value of a numerical variable. It is suitable to use the mean or the median to fill missing values in numerical variables because it considers the central tendency of the data and minimizes the impact of outliers. Additionally, filling with the mean helps maintain the overall distribution of the variable.
+
+By using the mode for categorical variables and the mean for numerical variables, we ensure that missing values are replaced with values that are representative of the respective variable types, thereby preserving the integrity and statistical properties of the dataset.
+
+3
+Fill missing values with mean and mode
+
+Fill missing values with the mean for age and Salary, and the mode value for UniversityDegree and Sex. Store the result in data_filled.
+
+Correct!
+Start project before checking your activities.
+
+In the previous activity, we used the mean value to handle missing values. However, we could have also used the median value as an alternative approach.When deciding whether to use the mean or median to handle missing values in numerical variables, consider the following:
+
+Mean: The mean is the average value of a dataset and is sensitive to outliers. It is appropriate to use the mean when the variable has a relatively symmetric distribution and no significant outliers. The mean provides a measure of central tendency that considers all values in the dataset. However, if the data contains extreme values or outliers, the mean may be influenced by them and may not accurately represent the typical values of the variable.
+
+Median: The median is the middle value in a dataset when it is sorted in ascending or descending order. It is robust to outliers and less affected by extreme values. The median is suitable to use when the variable has a skewed distribution or when there are significant outliers. By using the median, we focus on the central value that divides the dataset into two equal parts, making it less sensitive to extreme values.
+
+Analyzing the Impact
+Analyzing the impact of replacing missing values or dropping them involves assessing the changes in the dataset and the potential effects on the analysis or model performance.
+
+Compare Data Before and After: Compare the dataset before and after replacing or dropping missing values. Look for changes in the distribution, summary statistics, or any noticeable patterns.
+
+Evaluate Data Integrity: Assess the integrity of the data after replacing or dropping missing values. Check for any unexpected changes or inconsistencies that may have occurred.
+
+Let's run the code in the notebook.
+
+# Calculate the mean salary before handling missing values
+mean_salary_before = data['Salary'].mean()
+
+# Calculate the mean salary after filling missing values with mean
+mean_salary_after_mean = data_filled['Salary'].mean()
+
+# Calculate the mean salary after filling missing values with median
+mean_salary_after_median = data['Salary'].fillna(data['Salary'].median()).mean()
+
+print("Mean salary before handling missing values:", mean_salary_before)
+print("Mean salary after filling missing values with mean:", mean_salary_after_mean)
+print("Mean salary after filling missing values with median:", mean_salary_after_median)
+4
+Analyzing the Impact
+
+Based on previous code select the correct sentence.
+
+
+There are no significant differences between the mean salary after filling missing values with the mean and the mean salary after filling missing values with the median.
+
+
+The mean salary before handling missing values and the mean salary after filling missing values with the mean have the same value.
+
+
+The mean salary before handling missing values, the mean salary after filling missing values with the mean, and the mean salary after filling missing values with the median will all have different values.
+
+Correct!
