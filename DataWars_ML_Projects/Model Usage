@@ -1,0 +1,50 @@
+Quiz
+1
+In the lab, what is the main objective of using a pre-trained machine learning model?
+
+
+To fine-tune the model on a different set of hyperparameters.
+
+
+To make predictions on new data efficiently without retraining the model.
+
+
+To visualize the decision boundaries of the model.
+
+
+To train a model from scratch on a new dataset.
+
+Correct!
+Start project before checking your activities.
+
+2
+Which library is used to save and load the pre-trained model in the lab?
+
+
+NumPy
+
+
+Joblib
+
+
+Scikit-Learn
+
+
+Matplotlib
+
+Correct!
+Start project before checking your activities.
+
+3
+What type of model is used in the lab for the linear regression example?
+
+
+Logistic Regression
+
+
+Linear Regression
+
+
+Decision Tree
+
+Correct!
