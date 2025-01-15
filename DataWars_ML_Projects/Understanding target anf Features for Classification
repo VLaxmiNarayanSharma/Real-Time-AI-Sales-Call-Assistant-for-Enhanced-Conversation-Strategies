@@ -1,0 +1,148 @@
+Let's start!
+
+1
+What is the role of feature variables in a classification problem?
+
+
+To determine the accuracy of the model
+
+
+To provide additional context to the target variable
+
+
+To assess the performance of the model
+
+
+To classify the target variable into different categories
+
+Correct!
+Start project before checking your activities.
+
+2
+Which of the following best defines the target variable in a classification problem?
+
+
+The variable used for normalization
+
+
+The variable being predicted
+
+
+The variable used for feature engineering
+
+
+The variable used for making predictions
+
+Correct!
+Start project before checking your activities.
+
+3
+In a binary classification problem to predict whether a customer will churn or not, what would be the target variable?
+
+
+Customer income
+
+
+Likelihood of churn
+
+
+Customer ID
+
+
+Customer age
+
+Correct!
+Start project before checking your activities.
+
+Classification is a fundamental task in machine learning, and it involves categorizing data into different classes or categories. Binary classification is a fundamental technique in machine learning where the goal is to classify data into two distinct classes or categories. On the other hand, multiclass classification expands the scope by allowing the classification of data into more than two classes, enabling the analysis and prediction of a broader range of outcomes.
+
+Now it's time to Practice!
+
+Framingham Risk Score
+
+The Framingham_10yrs dataset comprises a range of features that encompass medical and lifestyle factors of individuals. The dataset provides valuable insights into the health profile of the subjects and can be utilized for diverse analytical purposes.
+
+The dataset you will be using contains the following features:
+
+Variable	Description
+Unnamed: 0	Index/identifier for each individual
+male	Gender of the individual (0 = Female, 1 = Male)
+age	Age of the individual in years
+education	Level of education
+currentSmoker	Smoking status (0 = Non-smoker, 1 = Smoker)
+cigsPerDay	Number of cigarettes smoked per day
+BPMeds	Use of blood pressure medications (0 = No, 1 = Yes)
+prevalentStroke	History of stroke (0 = No, 1 = Yes)
+prevalentHyp	Hypertension status (0 = No, 1 = Yes)
+diabetes	Diabetes status (0 = No, 1 = Yes)
+totChol	Total cholesterol level in mg/dL
+sysBP	Systolic blood pressure in mmHg
+diaBP	Diastolic blood pressure in mmHg
+BMI	Body Mass Index
+heartRate	Resting heart rate in beats per minute
+glucose	Blood glucose level in mg/dL
+TenYearCHD	Presence of coronary heart disease in 10 years
+4
+Identify the target variable for this problem
+
+
+BMI
+
+
+diabetes
+
+
+currentSmoker
+
+
+TenYearCHD
+
+Correct!
+Start project before checking your activities.
+
+Let's import the libraries into your notebook:
+
+import numpy as np
+import pandas as pd
+For this task read the data 'Framinghan_10ys.csv' into a Pandas data frame and store in 'df_t'.
+
+Let's separete the target and the features into two variables.
+
+5
+Separate the target and the features into two variables.
+
+Store the features in X and the target y.
+
+There are different ways to approach this task; however, in order to pass, 'y' should be a series and 'X' a dataframe.
+
+Correct!
+Start project before checking your activities.
+
+6
+Based on previous tasks identify if this problem is a binary of multiclass classification problem
+
+
+Multiclas
+
+
+Binary
+
+Correct!
+Start project before checking your activities.
+
+7
+You are given a dataset containing information about customers of an e-commerce website. The goal is to predict whether a customer will make a purchase or not based on their characteristics. Identify the target variable and the features variables in this scenario.
+
+
+Target variable: Purchase id; Features variables: Customer age, Time spent on the website, Number of products viewed.
+
+
+Target variable: Customer age; Features variables: Purchase amount, Time spent on the website, Number of products viewed.
+
+
+Target variable: Purchase amount; Features variables: Customer age, Time spent on the website, Number of products viewed.
+
+
+Target variable: Customer will make a purchase; Features variables: Customer age, Purchase amount, Time spent on the website, Number of products viewed.
+
+Correct!
