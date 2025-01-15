@@ -1,0 +1,46 @@
+Quiz
+1
+True or False: A larger hypothesis space always leads to better model performance.
+
+
+True
+
+
+False
+
+Correct!
+Start project before checking your activities.
+
+2
+True or False: Overfitting occurs when the hypothesis space is too complex for the given data.
+
+
+True
+
+
+False
+
+Correct!
+Start project before checking your activities.
+
+3
+Scenario Question
+
+You are a data scientist working on a binary classification problem. You have tried two different models for the task. Model A uses a simple hypothesis space with a linear model, while Model B employs a more complex hypothesis space with a high-degree polynomial. After evaluating both models, you notice that Model B fits the training data almost perfectly, but its performance on new, unseen data is not as good. On the other hand, Model A generalizes better to unseen data.
+
+Based on this scenario, which model is likely suffering from overfitting?
+
+
+Model A, because it uses a linear hypothesis space.
+
+
+Neither model is suffering from overfitting.
+
+
+Both models are suffering from overfitting.
+
+
+Model B, because it fits the training data almost perfectly.
+
+Correct!
+Start project before checking your activities.
