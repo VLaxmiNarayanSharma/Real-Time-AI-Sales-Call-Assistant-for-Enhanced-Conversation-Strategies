@@ -1,0 +1,57 @@
+Model
+Let's separate the target and the features into two variables.
+
+1
+Separate the target and the features into two variables.
+
+Store the features in X and the target in y. Both variables should be dataframes and keep the headers.
+
+Despite there being various ways to solve this exercise, the results must be dataframes in order to be considered correct.
+
+Correct!
+Start project before checking your activities.
+
+Let's split the dataset into train and test sets. The argument test_size is a float value whose value ranges between 0.0 and 1.0, which represents the proportion of our test size. its default value is none. The train_size argument is similar to test_size, but it represents the proportion of our train size.
+
+2
+Use train_test_split to split the data into training and testing sets. Split the dataset in 80% training, 20% testing, and random_state=0.
+
+Set the random_state parameter to a desired integer value for reproducibility.
+
+Store the values in the variables in X_train,X_test,y_train and y_test.
+
+Correct!
+Start project before checking your activities.
+
+Let's use a logistic regression algorithm to predict Happiness.
+
+Logistic Regression is a statistical algorithm used for binary classification problems. It models the relationship between a set of independent variables (features) and a binary dependent variable (target) by estimating the probabilities of the target variable belonging to each class. You will learn and practice in detail about machine learning models in future tracks.
+
+You will need to import :
+
+from sklearn.linear_model import LogisticRegression
+3
+Logistic Regression
+
+Create an instance of the Logistic Regression and store the model in lr.
+
+Correct!
+Start project before checking your activities.
+
+4
+Train a LogisticRegression classifier
+
+It's time to train the LogisticRegression using the training dataset.
+
+Correct!
+Start project before checking your activities.
+
+5
+Make predictions on the test set
+
+Use the trained model to make predictions on the test data. Store the prediction in y_pred.
+
+Correct!
+Start project before checking your activities.
+
+Congratulations! Continue practicing to improve your skills.
