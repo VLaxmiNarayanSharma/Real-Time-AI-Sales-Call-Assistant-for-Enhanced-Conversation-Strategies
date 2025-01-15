@@ -1,0 +1,40 @@
+1
+Dropping Unnecessary Features
+
+Unnamed: 0 column is unique for every row and will be deviating from the model. So let's just remove it.
+
+You must modify the df_t variable itself.
+
+Correct!
+Start project before checking your activities.
+
+Let's just check for the distribution of the target in the dataset.
+
+sns.set_palette("RdBu")
+sns.countplot(data=df_t, x='TenYearCHD');
+
+Preview
+Let's separate the target and the features into two variables.
+
+2
+Separate the target and the features into two variables.
+
+Store the features in X and the target y.
+
+Correct!
+Start project before checking your activities.
+
+Let's split the dataset into train and test sets.
+
+The scikit-learn library provides us with the model_selection module in which we have the splitter function train_test_split().
+
+from sklearn.model_selection import train_test_split
+train_test_split(*arrays, test_size=None, train_size=None, random_state=None, shuffle=True, stratify=None)`
+The argument test_size is a float value whose value ranges between 0.0 and 1.0, which represents the proportion of our test size. its default value is none. The train_size argument is similar to test_size, but it represents the proportion of our train size.
+
+3
+Use train_test_split to split the data into training and testing sets. Split the dataset in 80% training, 20% testing, and random_state=0.
+
+Store the values in the variables in X_train,X_test,y_train, y_test,random_state .
+
+Correct!
