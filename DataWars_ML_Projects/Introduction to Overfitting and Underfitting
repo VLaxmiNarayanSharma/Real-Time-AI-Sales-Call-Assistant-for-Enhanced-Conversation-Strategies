@@ -1,0 +1,14 @@
+Quiz
+1
+True or False: Overfitting occurs when a model is too complex and fits the training data too closely, including noise. This can lead to poor generalization on new, unseen data.
+True
+False
+Correct!
+Start project before checking your activities.
+
+2
+True or False: Validation curves help in determining the best hyperparameters for a model by plotting the training and testing error against different values of the hyperparameter.
+True
+False
+
+Correct!
