@@ -1,0 +1,18 @@
+1
+What does the hypothesis (h (x)) represent in machine learning?
+
+Activity description...
+
+
+The ground truth or actual output of the training data.
+
+
+The features of the dataset.
+
+
+The target variable to be predicted.
+
+
+The predicted output based on the input features and model parameters.
+
+Correct!
