@@ -1,0 +1,50 @@
+Quiz
+Here are four true or false questions related to the importance of feature selection and engineering in machine learning. Let's do it!
+
+1
+True or False: Feature selection is the process of randomly choosing any subset of features from the dataset.
+
+
+True
+
+
+False
+
+Correct!
+Start project before checking your activities.
+
+2
+True or False: Dimensionality reduction is a technique used in feature engineering to increase the number of features in the dataset.
+
+
+False
+
+
+True
+
+Correct!
+Start project before checking your activities.
+
+3
+True or False: Feature engineering involves creating new features by combining or transforming existing ones to enhance the model's performance.
+
+
+True
+
+
+False
+
+Correct!
+Start project before checking your activities.
+
+4
+True or False: Features that exhibit high discriminative power are typically highly correlated with each other.
+
+
+False
+
+
+True
+
+Correct!
+Start project before checking your activities.
