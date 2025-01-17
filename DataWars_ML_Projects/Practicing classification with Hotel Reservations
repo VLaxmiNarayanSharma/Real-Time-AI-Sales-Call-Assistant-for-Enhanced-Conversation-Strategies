@@ -1,0 +1,153 @@
+Hotel Reservations Dataset
+The Hotel Reservations Dataset is a popular dataset for exploring and analyzing data related to hotel reservations. The dataset contains information about bookings made in two hotels: one resort hotel and one city hotel. The data includes information about the booking dates, the number of guests, the type of rooms reserved, and various other details related to the bookings.
+
+In this lab, you will be using a hotel reservations dataset to validate your skills in machine learning. The lab is not guided, so you should follow the machine learning pipeline, including data cleaning, feature engineering, model training, etc., to achieve the best performance on a different dataset.
+
+Dataset
+We'll use a Dataset that contains Hotel Reservations and the information if a given reservation was eventually cancelled or not. THe dataset contains information like:
+
+Column Name	Definition
+Booking_ID	Unique identifier for each booking
+no_of_adults	Number of adults in the booking
+no_of_children	Number of children in the booking
+no_of_weekend_nights	Number of weekend nights in the booking
+no_of_week_nights	Number of week nights in the booking
+type_of_meal_plan	Type of meal plan selected for the booking
+required_car_parking_space	Whether a car parking space is required for the booking (yes/no)
+room_type_reserved	Type of room reserved for the booking
+lead_time	Number of days between the booking and arrival dates
+arrival_year	Year of arrival
+arrival_month	Month of arrival
+arrival_date	Date of arrival
+market_segment_type	Type of market segment associated with the booking
+repeated_guest	Whether the guest is a repeated guest (yes/no)
+no_of_previous_cancellations	Number of previous bookings that were cancelled by the guest
+no_of_previous_bookings_not_canceled	Number of previous bookings that were not cancelled by the guest
+avg_price_per_room	Average price per room for the booking
+no_of_special_requests	Number of special requests made by the guest for the booking
+booking_status	Status of the booking (cancelled or not cancelled)
+Evaluation
+Given the previously described features, your objective is to predict if a given reservation will be cancelled or not. The column booking_status can be either: Not_Canceled or Canceled.
+
+You will be given a set of features and your objective is to predict the booking_statuswith an accuracy of 80% or greater.
+
+You are given 3 files for this.
+
+Train Data
+The train.csv contains a full dataset to use to train your machine learning model, including the target variable booking_status. Use this data to train/tweak/tune your ML model until you're confident it works correctly.
+
+For this assessment, you can choose any of the machine learning models that have been presented in this track, including Random Forest, Bagging Model, Decision Tree, K-Nearest Neighbors (KNN), and Logistic Regression.
+
+The choice of model will depend on the specific problem you are trying to solve, the type and amount of data available, and other factors such as the complexity of the model and the interpretability of the results. It is important to carefully consider these factors and choose the most appropriate model for your specific use case.
+
+Test Data
+This dataset contains only the features of the reservation, without the resulting booking_status. Your objective is to predict the booking status for each one of these reservations.
+
+You must reach an accuracy of 80% , precision and recall of 75% or greater to pass this assessment.
+
+Sample Submission
+To evaluate your predictions, store your predictions in a file locally named submission.csv. The file must have the following structure:
+
+Booking_ID  booking_status
+INN29276    Canceled
+INN29277    Not_Canceled
+INN29278    Not_Canceled
+INN29279    Canceled
+INN29280    Canceled
+The file sample_submission.csv contains an example of how that file has to look like.
+
+Assessment
+Once you're ready, use the activity below to validate your submission.
+
+1
+Validate your Submission
+Make sure you have saved your predictions in the file submission.csv. You must reach an accuracy of 80% or greater.        
+import pandas as pd
+# Once your model is ready, generate predictions
+# using these features
+test = pd.read_csv('test.csv') 
+# Use this data to train and perfect your model:
+df = pd.read_csv('train.csv')
+# and store your predictions in a file
+# named `submission.csv`
+# has to have this format:
+pd.read_csv('sample_submission.csv', nrows=5)
+pd.read_csv('sample_submission.csv', nrows=5).values
+df.head()
+import pandas as pd
+
+# Load training and test datasets
+train = pd.read_csv('train.csv')
+test = pd.read_csv('test.csv')
+
+# Display a preview of the train dataset
+print(train.head())
+# Check for null values
+print(train.isnull().sum())
+
+# Data types
+print(train.dtypes)
+
+# Target class distribution
+print(train['booking_status'].value_counts())
+
+from sklearn.preprocessing import LabelEncoder, StandardScaler
+
+# Encode categorical columns
+categorical_cols = ['type_of_meal_plan', 'room_type_reserved', 'market_segment_type', 'repeated_guest']
+label_encoders = {col: LabelEncoder() for col in categorical_cols}
+
+for col in categorical_cols:
+    train[col] = label_encoders[col].fit_transform(train[col])
+    test[col] = label_encoders[col].transform(test[col])
+
+# Normalize numerical features
+scaler = StandardScaler()
+numerical_cols = ['lead_time', 'avg_price_per_room', 'no_of_special_requests']
+
+train[numerical_cols] = scaler.fit_transform(train[numerical_cols])
+test[numerical_cols] = scaler.transform(test[numerical_cols])
+from sklearn.model_selection import train_test_split
+
+X = train.drop(['booking_status', 'Booking_ID'], axis=1)
+y = train['booking_status']
+
+# Encode the target column
+label_encoder = LabelEncoder()
+y = label_encoder.fit_transform(y)
+
+# Split into train and validation sets
+X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
+from sklearn.ensemble import RandomForestClassifier
+
+# Initialize and train the model
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Evaluate the model on the validation set
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+
+y_pred = model.predict(X_val)
+accuracy = accuracy_score(y_val, y_pred)
+precision = precision_score(y_val, y_pred)
+recall = recall_score(y_val, y_pred)
+
+print(f"Accuracy: {accuracy}")
+print(f"Precision: {precision}")
+print(f"Recall: {recall}")
+
+# Make predictions on the test dataset
+test_predictions = model.predict(test.drop('Booking_ID', axis=1))
+test_predictions = label_encoder.inverse_transform(test_predictions)
+
+# Prepare the submission file
+submission = pd.DataFrame({
+    'Booking_ID': test['Booking_ID'],
+    'booking_status': test_predictions
+})
+
+# Save to CSV
+submission.to_csv('submission.csv', index=False)
+print("Submission file saved as submission.csv")
+
+submission.to_csv('submission.csv', index=False)
