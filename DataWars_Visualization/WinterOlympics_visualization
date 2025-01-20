@@ -1,0 +1,567 @@
+Understanding the Olympics
+Step into the icy world of the 1924 Winter Olympics, where athletes braved freezing temperatures and treacherous snow to chase their dreams! This capstone project is your golden ticket to relive the exhilarating stories of cross-country skiing champions who carved their names into Olympic history.
+
+In this project, you'll not only get to know these remarkable athletes but also use Python's powerful Matplotlib library to visualize their stories. From Norway's Thorleif Haug, who claimed gold in the men's 18 kilometers, to Finland's Tapani Niku, who earned bronze, you'll bring their accomplishments to life through data visualizations.
+
+Understanding the Olympics
+1
+Plot histograms of athlete ages.
+
+In this activity, you'll create a histogram to analyze the distribution of athlete ages from the dataset. Follow the specifications below to structure your plot:
+
+Figure size : 10 by 6
+
+Colour : green
+
+Edgecolor : black
+
+Bins : 15
+
+Title: Distribution of Athlete Ages
+
+Vertical Line for average age
+
+Color : black
+
+linestyle : dashed
+
+linewidth : 2
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+fig, ax = plt.subplots(figsize=(10, 6))
+# Plot the histogram
+ax.hist(df['Age of Athlete'], bins=15, color='green', edgecolor='black')
+
+# Calculate the average age
+average_age = df['Age of Athlete'].mean()
+
+# Add a vertical line for the average age
+ax.axvline(average_age, color='black', linestyle='dashed', linewidth=2, label=f'Average Age: {average_age:.1f}')
+
+# Add labels and title
+ax.set_xlabel('Age of Athlete')
+ax.set_ylabel('Number of Athletes')
+ax.set_title('Distribution of Athlete Ages')
+
+# Add the legend
+ax.legend()
+2
+Create a stacked bar chart showing the number of medals won in each sport, with each bar divided by medal type (Gold, Silver, Bronze).
+
+In this activity, you will use the medal_counts DataFrame to create a stacked bar chart(with the .plot method) that visually represents the number of medals won in each sport, broken down by medal type. Set the figure size to 12 x 8. For colors, assign gold to Gold medals, silver to Silver medals, and brown to Bronze medals for clear differentiation. Label the x-axis as Sport and the y-axis as Number of Medals, and add the title : Number of Medals by Sport and Medal Type. Include a legend for the medal colors and Rotate the x-axis labels by 45 degrees and set the horizontal alignment to right, to prevent overlap and make the labels easier to read. Finally, apply .tight_layout() to ensure a clean, organized appearance without overlapping or clipping elements.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+medal_counts = df.groupby(['Sport', 'Medal']).size().unstack(fill_value=0)
+
+# Create a figure and an axis
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot the stacked bar chart
+medal_counts.plot(kind='bar', stacked=True, ax=ax, color=['brown', 'gold', 'silver'])
+
+# Add labels and title
+ax.set_xlabel('Sport')
+ax.set_ylabel('Number of Medals')
+ax.set_title('Number of Medals by Sport and Medal Type')
+
+# Add the legend
+ax.legend(title='Medal Type')
+
+# Rotate the x-ticks for better readability
+ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
+
+# Adjust layout
+fig.tight_layout()
+3
+Create a grouped bar chart to compare gender participation within each sport.
+
+Using the created DataFrame gender_counts, create a grouped bar chart with the .plot method where each sport has two bars, one for each gender using the following information:
+
+Figuresize : 12 by 8
+
+Color : blue for male and pink for female
+
+Title : Number of Athletes by Gender in Each Sport
+
+Include a legend to distinguish between the genders, and rotate the x-axis labels by 45 degrees for better readability, and set the horizontal alignment to right. Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance. Finally, display the chart to see how gender participation varies across different sports.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+gender_counts = df.groupby(['Sport', 'Gender']).size().unstack(fill_value=0)
+
+# Create a figure and an axis
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot the grouped bar chart
+gender_counts.plot(kind='bar', ax=ax, color=['blue', 'pink'])
+
+# Add labels and title
+ax.set_xlabel('Sport')
+ax.set_ylabel('Number of Athletes')
+ax.set_title('Number of Athletes by Gender in Each Sport')
+
+# Add the legend
+ax.legend(title='Gender')
+
+# Rotate the x-ticks for better readability
+ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
+
+# Adjust layout
+fig.tight_layout()
+4
+Use a bar chart to show the total number of medals won by each country.
+
+Using the created medal_counts_by_country series, create a bar chart with the .plot method to represent the total number of medals won by each country, where each bar corresponds to a country and its height indicates the total number of medals won. Use gold-colored bars to signify the medals, and add black edges to make the bars stand out.
+
+Figure size : 12 by 8
+
+x-axis label : Country
+
+y-axis label : Total Number of Medals
+
+Title : Total Number of Medals Won by Each Country
+
+Finally, rotate the x-axis labels by 90 degrees and set the horizontal alignment to right . Finally, apply .tight_layout() to ensure that all plot elements fit neatly without overlap or clipping
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+medal_counts_by_country = df.groupby('Country').size()
+
+# Create a figure and an axis
+fig, ax = plt.subplots(figsize=(12, 8))
+fig.tight_layout()
+# Plot the bar chart
+medal_counts_by_country.plot(kind='bar', ax=ax, color='gold', edgecolor='black')
+
+# Add labels and title
+ax.set_xlabel('Country')
+ax.set_ylabel('Total Number of Medals')
+ax.set_title('Total Number of Medals Won by Each Country')
+
+# Rotate the x-ticks for better readability
+ax.set_xticklabels(ax.get_xticklabels(), rotation=90, ha='right')
+
+# Display the plot
+fig.tight_layout()
+5
+Create a pie chart showing the proportion of each medal (gold, silver, bronze) in Snowboarding.
+
+With the series medal_counts, create a pie chart to represent the distribution of medals in Snowboarding.
+
+Use a figure size of 8 by 8, and autopct=%1.1f%% to display the percentage of each medal type.
+
+For clear differentiation, assign these colors to each medal type:
+
+gold :(#FFD700)
+
+silver :(#C0C0C0)
+
+bronze :(#CD7F32).
+
+Set the chart to have equal aspect ratios so the pie appears as a perfect circle. Finally, add a title (Distribution of Medal Ranks in Snowboarding) to provide context to your visualization.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+df_snowboarding = df[df['Sport'] == 'Snowboarding']
+
+# Count the number of each type of medal
+medal_counts = df_snowboarding['Medal'].value_counts()
+
+# Create colors for medals
+colors = ['#FFD700', '#C0C0C0', '#CD7F32']
+
+# Create a figure and an axis
+fig, ax = plt.subplots(figsize=(8, 8))
+
+# Create the pie chart
+ax.pie(medal_counts.values, labels=medal_counts.index, colors=colors, autopct='%1.1f%%')
+
+# Set the title
+ax.set_title('Distribution of Medal Ranks in Snowboarding')
+
+# Ensure the pie chart is a circle
+ax.axis('equal')
+
+# Show the plot
+plt.show()
+6
+Use a line plot to show the number of medals awarded over different years
+
+In this activity, you will create a line plot using the medals_per_year series to visualize the trend in the number of medals awarded over various years. Use the following parameters for the plot:
+
+Figure size: Set the plot size to 10x6 inches.
+
+Line color: Use blue to plot the line.
+
+Marker: Use a circle marker (o) to represent each data point.
+
+Line style: Use a solid line (-) to connect the points.
+
+Title: Add a title to the plot: "Number of Medals Awarded Over Different Years".
+
+Finally, to emphasize recent trends, use a gray shaded area to highlight the years after 2000. Apply an alpha value of 0.5 for transparency and add the label "Post-2000" to indicate this section of the graph.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+medals_per_year = df.groupby('Year').size()
+
+# Create a figure and an axis
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Plot the line chart
+ax.plot(medals_per_year.index, medals_per_year, marker='o', linestyle='-', color='b', label='Number of Medals')
+
+# Highlight the area after the year 2000
+ax.axvspan(2000, medals_per_year.index.max(), color='gray', alpha=0.5, label='Post-2000')
+
+# Set the title and labels
+ax.set_title('Number of Medals Awarded Over Different Years')
+ax.set_xlabel('Year')
+ax.set_ylabel('Number of Medals')
+
+# Display the legend
+ax.legend()
+
+# Show the plot
+plt.show()
+7
+Visualize the Top 10 Athletes
+
+In this activity, you'll use the top_athletes DataFrame to create a horizontal bar chart showcasing the top 10 athletes based on their medal counts.
+
+Figure size : 12 by 8
+
+Title: Top 10 Athletes by Medal Count
+
+y-axis: Athlete Name
+
+x-axis: Number of Medals
+
+Finally, adjust the layout to make sure everything fits nicely and displays the plot.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+athlete_medals = df['Name of Athlete or Team'].value_counts().nlargest(10)
+
+# Reset index to get a clean DataFrame
+top_athletes = athlete_medals.reset_index()
+top_athletes.columns = ['Athlete Name', 'Medal Count']
+
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Plot the horizontal bar chart
+ax.barh(top_athletes['Athlete Name'], top_athletes['Medal Count'])
+
+# Set labels and title
+ax.set_xlabel('Number of Medals')
+ax.set_ylabel('Athlete Name')
+ax.set_title('Top 10 Athletes by Medal Count')
+
+# Adjust layout 
+plt.tight_layout()
+8
+Segment athletes into age groups and create a heatmap to show which sports have more participants in each age group.
+
+Begin by categorizing athletes into age groups using the following bins: [15, 20, 25, 30, 35, 40, 45, 50, 55, 60], and corresponding labels: ['15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55+']. Then, use the created cross-tabulation DataFrame sport_age_counts to create a visualization with a heatmap , where each cell shows the number of athletes for each sport and age group combination.
+
+Figure size : 12 by 8
+
+Cmap : Blues
+
+fmt : d
+
+Annotation : True
+
+Title: Number of Athletes by Sport and Age Group
+
+Rotate the x-axis labels(45) for better readability, and adjust the layout for clarity. Finally, display the plot to illustrate the distribution of athletes across various sports and age groups.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+bins = [15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+labels = ['15-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55+']
+
+# Create age groups
+df['AgeGroup'] = pd.cut(df['Age of Athlete'], bins=bins, labels=labels, right=False)
+
+# Count participants per sport and age group
+sport_age_counts = pd.crosstab(df['Sport'], df['AgeGroup'])
+fig, ax = plt.subplots(figsize=(12, 8))
+
+# Create the heatmap
+sns.heatmap(sport_age_counts, ax=ax, cmap='Blues', annot=True, fmt='d')
+
+# Set labels and title
+ax.set_xlabel('Age Group')
+ax.set_ylabel('Sport')
+ax.set_title('Number of Athletes by Sport and Age Group')
+
+# Rotate x-axis labels for better readability
+plt.xticks(rotation=45)
+
+# Adjust layout 
+plt.tight_layout()
+9
+Which method can be used to set the limits of the x-axis and y-axis simultaneously in a Matplotlib plot?
+
+
+plt.layout()
+
+
+ax.set(xlim=, ylim=)
+
+
+ax.grid()
+
+
+plt.show()
+
+Correct!
+Correct Answer : ax.set(xlim=, ylim=)
+
+10
+Visualize the sports in which athletes under 18 are thriving
+
+In this activity, you'll create a bar plot using the sports_counts series to highlight the sports in which athletes under 18 are excelling. Use the following parameters:
+
+Figure size : 12 by 8
+
+Color : palette(defined in notebook)
+
+Edgecolor : black
+
+Grid : linestyle :--, alpha=0.7
+
+xlabel : Sport, fontsize : 12
+
+ylabel : Number of Medals, fontsize : 12
+
+Title: Sports Where Athletes Under 18 are Thriving, fontsize:16, fontweight:bold
+
+For data labels and annotations, use the following settings to display the value on top of each bar:
+
+Text format: Defined in the notebook for consistent styling.
+
+Position (xy): Center the text horizontally by setting (bar.get_x() + bar.get_width() / 2, bar.get_height()).
+
+Horizontal alignment (ha): center.
+
+Vertical alignment (va): center.
+
+Text offset: Use (0, 8) for positioning above each bar.
+
+Font size: Set to 10, with bold text for emphasis.
+
+Font color: Black for readability.
+
+To make the chart more insightful, highlight sports with multiple medals by setting their bars to red with a linewidth of 3. Rotate the x-axis labels by 45 degrees to enhance readability, allowing viewers to easily identify the sports where young athletes are performing exceptionally well.
+
+Expected outcome:
+
+Your result should match this image:
+
+
+Preview
+Correct!
+under_18_df = df[df['Age of Athlete'] < 18]
+
+# Group by sport and count the number of medals
+sports_counts = under_18_df['Sport'].value_counts().sort_values(ascending=False)
+
+# Custom color palette (using seaborn)
+palette = sns.color_palette("husl", len(sports_counts))
+
+# Plot the data using matplotlib directly
+fig, ax = plt.subplots(figsize=(12, 8))
+bars = ax.bar(sports_counts.index, sports_counts.values, color=palette, edgecolor='black')
+
+# Add data labels above the bars
+for bar in bars:
+    ax.annotate(format(bar.get_height(), '.0f'),
+                (bar.get_x() + bar.get_width() / 2, bar.get_height()),
+                ha='center', va='center', xytext=(0, 8),
+                textcoords='offset points', fontsize=10, fontweight='bold', color='black')
+
+# Customize gridlines and axis
+ax.grid(True, linestyle='--', alpha=0.7)
+ax.set_axisbelow(True)
+ax.set_xlabel('Sport', fontsize=12)
+ax.set_ylabel('Number of Medals', fontsize=12)
+ax.set_title('Sports Where Athletes Under 18 are Thriving', fontsize=16, fontweight='bold')
+ax.tick_params(axis='x', rotation=45)  # Rotate x-axis labels for better readability
+
+# Highlight sports with multiple medals
+for i, bar in enumerate(bars):
+    if sports_counts.values[i] > 1:
+        bar.set_edgecolor('red')
+        bar.set_linewidth(3)
+
+# Adjust layout to prevent overlap
+plt.tight_layout()
+11
+Visualizing countries with the most gold medals.
+
+In this activity, you will create a horizontal bar chart to visualize the countries that have won the most gold medals, using the created gold_medals_per_country series. Follow these customization guidelines:
+
+Figure size: Set to 12x8 inches for a clear, large visualization.
+
+Bar color: Use gold to represent gold medals, with black edges for contrast.
+
+Title: "Countries with the Most Gold Medals" (fontsize: 16, fontweight: bold).
+
+x-axis label: Set as "Number of Gold Medals" (fontsize: 14).
+
+y-axis label: Set as "Country" (fontsize: 14).
+
+Next, enhance the chart by adding data labels to the right of each bar, showing the exact count of gold medals. Use the following settings for data labels:
+
+xytext: (5, 0) to position the text slightly to the right of the bar.
+
+textcoords: 'offset points'.
+
+Horizontal alignment (ha): left and Vertical alignment (va): center for proper alignment.
+
+Font size: 10, with black text for clarity.
+
+Finally, improve readability by applying a grid along the x-axis with a dashed line (linestyle='--', alpha=0.7). This chart will effectively showcase the countries excelling in gold medal achievements.
+
+Expected outcome:
+
+Your result should match this image:
+
+
+Preview
+Correct!
+# Filter the DataFrame to include only gold medals
+gold_medals = df[df['Medal'] == 'gold']
+
+# Count gold medals per country and sort them
+gold_medals_per_country = gold_medals['Country'].value_counts().sort_values(ascending=True)
+
+# Plot the data using matplotlib directly
+fig, ax = plt.subplots(figsize=(12, 8))
+bars = ax.barh(gold_medals_per_country.index, gold_medals_per_country.values, color='gold', edgecolor='black')
+
+# Add data labels next to the bars
+for bar in bars:
+    ax.annotate(f'{bar.get_width()}',
+                (bar.get_width(), bar.get_y() + bar.get_height() / 2),
+                xytext=(5, 0),
+                textcoords='offset points',
+                ha='left', va='center',
+                fontsize=10, color='black')
+
+# Customize the plot
+ax.set_title('Countries with the Most Gold Medals', fontsize=16, fontweight='bold')
+ax.set_xlabel('Number of Gold Medals', fontsize=14)
+ax.set_ylabel('Country', fontsize=14)
+ax.grid(axis='x', linestyle='--', alpha=0.7)
+
+# Adjust layout
+plt.tight_layout()
+12
+What parameter should you use to display percentage values on a pie chart?
+
+autopct
+Correct!
+Correct Answer: autopct
+
+13
+What parameter allows you to choose the color map for a heatmap?
+
+cmap
+Correct!
+Correct answer : cmap
+
+14
+What parameter controls the thickness of the lines in a plot?
+
+ linewidth
+Correct!
+Correct answer : linewidth
+
+15
+Medal Rank Distribution across all sports
+
+In this activity, you will visualize the distribution of medals by rank across all sports using a bar chart. Utilize the medal_rank_counts series, where the x-values correspond to the medal ranks (Gold, Silver, Bronze) and the y-values represent the number of medals awarded for each rank. Set the figure size to 10 by 6 inches, and customize the bar colors to match the medal types: gold for Gold, silver for Silver, and brown for Bronze. Add a chart title: Medal Rank Distribution, and label the x-axis(Medal Rank) and y-axis(Number of Medals) accordingly. For clarity, adjust the x-tick labels to display 1 (Gold), 2 (Silver), and 3 (Bronze). Finally, apply .tight_layout() to ensure the chart is neatly arranged without layout issues.
+
+Expected outcome:
+
+Your result should match this image:
+
+
+Preview
+Correct!
+# Count medals by rank
+medal_rank_counts = df['Medal Rank'].value_counts().sort_index()
+
+# Plot bar chart using matplotlib
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.bar(range(len(medal_rank_counts)), medal_rank_counts, color=['gold', 'silver', 'brown'])
+
+# Set the title and labels
+ax.set_title('Medal Rank Distribution')
+ax.set_xlabel('Medal Rank')
+ax.set_ylabel('Number of Medals')
+
+# Customize x-ticks
+ax.set_xticks(range(len(medal_rank_counts)))
+ax.set_xticklabels(['1 (Gold)', '2 (Silver)', '3 (Bronze)'], rotation=0)
+
+# Adjust layout and show plot
+fig.tight_layout()
+16
+Which method can you use to add grid lines only to specific axes(ax) of a subplot rather than all axes in a figure?
+
+ ax.grid()
+Correct!
+Correct answer : ax.grid()
+
+17
+What method should you use to manually adjust the spacing between subplots to avoid overlap of titles and labels?
+
+plt.subplots_adjust()
+Correct!
+Correct answer : plt.subplots_adjust()
