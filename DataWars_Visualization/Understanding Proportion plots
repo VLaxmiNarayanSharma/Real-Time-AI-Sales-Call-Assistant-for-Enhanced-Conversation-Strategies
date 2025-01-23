@@ -1,0 +1,157 @@
+Activity
+This project aims to teach how to visualize proportions and percentages using the Matplotlib library in Python. We will learn to create pie charts, bar graphs, and doughnut charts, which are effective for displaying proportions in a dataset.
+
+Information that can be expressed as a percentage or fraction of a total is recognized as proportional data.
+
+Proportional data visualization aids in comprehending the relative sizes of different categories or groups and their impact on the bigger context. Visualizing proportions is effectively achieved through the use of pie charts, donut charts, or waffle charts.
+
+Pie Chart
+A Pie Chart is a type of graphical representation widely used in statistics and data analysis to illustrate numerical proportions in a dataset. Here's a detailed explanation of its features and uses:
+
+Definition and Structure
+Circular Representation: A pie chart is circular in shape, symbolizing a whole entity or dataset.
+Slices: The circle is divided into slices to represent different categories or parts of the data. Each slice's size is proportional to the quantity it represents.
+Totality: The entire circle represents the total sum of all data points, or 100% of the data set.
+Usage
+Proportional Comparison: Pie charts are particularly useful when you want to compare parts of a whole. They give a quick visual impression of the relative sizes of the categories.
+Percentage Visualization: Each slice is often labeled with a percentage, making it easy to understand the proportion each category contributes to the whole.
+Example
+Imagine you conducted a survey on favorite ice cream flavors among 100 people. You found that 40% like Chocolate, 30% prefer Vanilla, 20% Strawberry, and 10% Mint. A pie chart would depict this information by dividing a circle into slices of sizes corresponding to these percentages.
+
+
+Preview
+Limitations
+Overuse with Many Categories: Pie charts can become cluttered and less effective when there are too many categories. Generally, they are best used when there are fewer categories to compare.
+Difficulty in Exact Comparison: While pie charts are great for showing general proportions, it can be challenging to discern small differences in size between slices.
+Variations
+Exploded Pie Chart: Sometimes, slices are pulled out from the pie to emphasize certain data points.
+Doughnut Chart: A variation of the pie chart with a central hole, giving it a doughnut shape. It's visually appealing and can display multiple series of data.
+Pie charts are a popular and visually appealing tool for displaying proportional data, especially useful in presentations and reports where quick, easy-to-understand visualizations are needed. However, careful consideration should be given to the number of categories and the chart's clarity when presenting detailed or complex data.
+
+Revised Basic Pie Chart Section
+Let's begin by creating a simple pie chart to visualize the variety of fruits in a basket.
+
+# Data
+fruit_types = ['Apples', 'Bananas', 'Grapes', 'Oranges']
+quantities = [15, 30, 45, 10]
+
+# Creating the figure and axis
+fig, ax = plt.subplots()
+
+# Pie chart
+ax.pie(quantities, labels=fruit_types, autopct='%1.1f%%')
+ax.set_title('Fruit Basket Composition')
+
+Preview
+Doughnut Chart Revision
+A doughnut chart enhances a standard pie chart by featuring a central hole, lending a visually appealing aspect to the data representation.
+
+Let's adapt the provided code to strictly use figure (fig) and axes (ax) methods for consistency and best practices:
+
+# First, create the figure and axis objects
+fig, ax = plt.subplots()
+
+# Create the doughnut chart by drawing a pie chart with a white circle at the center
+ax.pie(quantities, labels=fruit_types, autopct='%1.1f%%', startangle=90, pctdistance=0.85)
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')
+fig.gca().add_artist(centre_circle)
+
+# Set the title of the doughnut chart
+ax.set_title('Fruit Basket Composition - Doughnut Chart')
+
+Preview
+Bar Graph for Proportions
+Bar graphs, also known as bar charts, are a visual way to present data with rectangular bars where the length or height represents the value or frequency of each category. These graphs shine when you need to compare various groups or categories, especially when there are several categories or the precise values are important. The size of each bar makes it straightforward to compare the proportions of different categories.
+
+Let's consider an example using an ice cream flavor survey:
+
+Categories: Chocolate, Vanilla, Strawberry, Mint
+Percentages: 40%, 30%, 20%, 10%
+We can visualize this data using a bar graph where each flavor has a bar of a different length based on its percentage.
+
+Here is how to create a bar graph for this data with Python and Matplotlib, adhering to the specified instruction not to use plt methods directly:
+
+import matplotlib.pyplot as plt
+
+# Data
+flavors = ['Chocolate', 'Vanilla', 'Strawberry', 'Mint']
+percentages = [40, 30, 20, 10]
+
+# Create the figure and axis objects
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Creating the bar graph
+ax.bar(flavors, percentages, color=['brown', 'beige', 'pink', 'green'])
+
+# Adding labels and title
+ax.set_xlabel('Ice Cream Flavor')
+ax.set_ylabel('Percentage')
+ax.set_title('Favorite Ice Cream Flavors Survey Results')
+
+# Display the chart
+plt.show()
+
+Preview
+Bar graphs are a versatile and straightforward way to represent proportional data, particularly useful when the dataset has numerous categories or precise value comparisons are needed. They are a staple in data visualization for their clarity and ease of interpretation.
+
+Activity
+1
+What does a pie chart typically represent?
+
+
+Distribution of a categorical dataset.
+
+
+Proportions of different categories within a whole.
+
+
+Time series data.
+
+
+Correlation between two variables.
+
+Correct!
+2
+In a bar plot, what does the height of each bar usually represent?
+
+
+The variance of the category.
+
+
+The mean value of the category.
+
+
+The proportion of the category compared to the whole.
+
+
+The frequency or value of the category.
+
+Correct!
+3
+You are given a pie chart showing market share of five companies and a bar graph depicting their annual profits. How would you use these charts in conjunction to draw insights about the companies' performance?
+
+
+The pie chart can be used to understand the relative market dominance of each company, while the bar graph can provide insights into their absolute profit figures. Comparing these charts could reveal, for instance, whether a company with a large market share is also proportionately profitable.
+
+
+By examining the pie chart, we can determine the annual profits of each company based on their market share, as the market share directly indicates profitability. Similarly, from the bar graph of annual profits, we can precisely calculate the market share percentages of each company. Thus, these charts allow us to interchangeably use market share to determine profits and vice versa.
+
+Correct!
+4
+Create a bar plot for given data
+
+Categories: 'A', 'B', 'C', 'D'
+Values: 23, 45, 12, 35
+Set the figure size to (10, 6)
+Set the color of the bars to ['red', 'green', 'blue', 'orange']
+Label the x-axis as 'Categories'
+Label the y-axis as 'Values'
+Set the title as 'Bar Plot for Categories'
+Your plot should look like this:
+
+
+Preview
+Correct!
+Conclusion
+Conclusion
+In this project, we learned how to create various types of charts to represent proportions using Matplotlib. These visualization techniques are essential for data analysis and can be applied to many different datasets.
