@@ -1,0 +1,180 @@
+Activities
+The global population in 2023 has soared to a staggering 8 billion, marking a pivotal milestone in human history. This unprecedented growth brings with it significant implications for resource management, urban planning, and global sustainability. As rapid urbanization accelerates, demographics shift, and societal needs evolve, understanding these population trends is more crucial than ever. This project explores these dynamics, offering insights into how factors such as age distribution, fertility rates, and migration patterns are not only reshaping regions but also redefining the future of our interconnected world.
+
+Activities
+1
+Plot a bar chart showing the population of the top 10 most populous countries.
+
+Start by cleaning the Population 2023 column by removing commas and converting the values from strings to integers. This ensures that the population data is treated numerically rather than as text. Next, sort the DataFrame in descending order based on the Population 2023 column to identify the top 10 most populous countries. Finally, plot the chart using the following information:
+
+Figure size : 10 by 6
+
+Title: Top 10 Most Populous Countries in 2023
+
+Title Fontsize : 14
+
+x and y label Fontsize : 12
+
+Color : skyblue
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+2
+Find the top 3 countries with the largest net migration and visualize them using a bar chart
+
+Start by selecting the top three countries with the highest net migration from the DataFrame . Next, Plot the bar chart by placing the country names on the x-axis and their net migration values on the y-axis, using the following information:
+
+Figure size : 10 by 6
+
+Color : Green
+
+Title : Top 3 Countries with the Largest Net Migration
+
+x-axis lablel : Country
+
+y-axis label : Net Migration
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+3
+Create a pie chart visualizing the World Population Share of the Top 5 Countries in 2023
+
+Data Prep:
+
+Firstly, convert the World Population Share % column from a string to a float by removing the percentage sign. Next, sort the DataFrame by Population 2023 column in descending order to identify the top 5 countries by population.
+
+Calculate "Other" Category: Top 5 Countries: Choose the top 5 countries based on their 2023 population. Compute "Other": Calculate the combined world population share for the remaining countries by subtracting the sum of the top 5 countries' shares from 100%. This will create an "Other" category to represent the rest of the world.
+
+Plot Pie Chart: Here, each slice will represent a country with the remaining share labelled as other. Utilize the following information for this task:
+
+Figure size : 8 by 8
+
+colors : plt.cm.Paired.colors
+
+autopct : '%1.1f%%' to display the population percentages.
+
+Rotatate the chart for better visual balance using startangle : 140
+
+Title : World Population Share of Top 5 Countries (2023)
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+4
+Create a scatter plot showing the relationship between population and land area.
+
+Create a scatter plot to examine the relationship between the land area and population of countries in 2023. Use the Land Area (Km²) column for the x-axis and the Population 2023 for the y-axis. Use the following information to plot the graph:
+
+Color : Blue
+
+Figure size : 10 by 6
+
+Transparency : alpha=0.7
+
+Title: Relationship Between Population and Land Area (2023)'
+
+Title Fontsize : 14
+
+x and y label Fontsize : 12
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+5
+Compare fertility rates across countries by similar median ages to see how fertility rates vary.
+
+Start by creating bins that categorize countries based on their median age : '0-20', '21-30', '31-40', and '41+'. Then, use these bins to create an Age Group column in the DataFrame. Next, calculate the average fertility rate for each age group by grouping the data accordingly. Finally, plot these averages using a bar chart, where each bar represents the average fertility rate for a specific age group, giving you a clear visual comparison. Use the following information for the chart:
+
+Figure size : 10 by 6
+
+Color : Pink
+
+Title: Average Fertility Rate by Age Group
+
+Title Fontsize : 14
+
+x and y label Fontsize : 12
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+6
+Visualize Median Age Distribution Across All Countries through a Histogram
+
+Generate a histogram to visualize the distribution of median ages across all countries, using the following information to plot the graph:
+
+Figure size : 10 by 6
+
+Edgecolor : black
+
+Transparency : alpha=0.7
+
+Bins : 15
+
+Title: Distribution of Median Ages Across Countries
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+7
+Display Population and Net Population Change for Top 10 Countries Using a Grouped bar chart
+
+Create a grouped bar chart to compare the population and net population change for the top 10 countries. The chart uses blue bars for Population 2023 and red bars for Net Population Change. The x-axis should show the country names, and the y-axis represents the values. The x-axis labels are rotated for better readability.
+
+Figure size : 12 by 8
+
+bar_width : 0.35
+
+The chart should include a legend.
+
+Title: Population and Net Population Change for Top 10 Countries
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+8
+Create a histogram of the fertility rates across all countries
+
+Start by calculating the mean fertility rate across all countries to get a reference point. Next, create a figure and a subplot with a size of 10 by 6 inches to set up your histogram. Plot the histogram using the fertility rates from your dataset, dividing the data into 20 bins. Choose a sky-blue color for the bars with black edges, and make them slightly transparent(alpha:0.7) to enhance visibility.
+
+Then, add a red dashed vertical line at the average fertility rate to highlight this key value on the histogram. Label this line as average_fertility_rate so it shows the exact average fertility rate. Finally, add a title to the plot and label the x-axis as Fertility Rate and the y-axis as Frequency to make the chart clear. Display the plot to visualize how fertility rates are distributed across countries, with the average rate clearly marked.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+The End
+Congratulations on completing the project! You've successfully applied your data visualization skills to analyze global population data. Great job!
