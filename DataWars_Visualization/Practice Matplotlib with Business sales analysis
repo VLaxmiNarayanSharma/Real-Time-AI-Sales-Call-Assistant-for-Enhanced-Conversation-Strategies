@@ -1,0 +1,58 @@
+Activities
+Business sales analysis
+This project will put in practice relationship plots using business sales data.
+
+Our dataset is an intriguing collection of sales records from various divisions of a business. It includes vital information such as:
+
+division: Different segments of the business, such as Computer Hardware, Office Supplies, and Printers.
+level of education: The educational qualifications of employees, ranging from associate's degrees to higher levels.
+training level: The extent of professional training received by employees.
+work experience: The number of years employees have spent in their professional careers.
+salary: The compensation awarded to employees.
+sales: The sales figures achieved by each division.
+Objectives
+The primary goal of this project is to analyze and understand how different factors, such as educational background, training level, and work experience, influence sales performance across different business divisions. By employing relationship plots, we will:
+
+Activities
+1
+Analyzing salary vs sales
+
+In this activity, you will create a scatter plot to analyze the relationship between salary and sales figures in a business context. This visualization will help in understanding whether there is a correlation between the amount employees are paid (salary) and their sales performance.
+
+Follow the steps outlined in the template to create your scatterplot.
+
+Note: The key requirement is to keep the default figure size, color, label, and title settings unmodified.
+
+Your plot should look like the one shown in the image below:
+
+
+Preview
+Correct!
+2
+Use different sizes to represent working experiences
+
+In this activity, your objective is to create a scatter plot that visualizes the relationship between salary and sales, while also incorporating the dimension of work experience. You will represent salary and sales on the axes of the scatter plot and use varying sizes of the data points to indicate different levels of work experience. This multi-dimensional visualization aims to provide deeper insights into how salary and sales figures correlate with the amount of work experience an employee has.
+
+Follow the steps outlined in the template to create your scatterplot.
+
+Note: The key requirement is to keep the default figure size, color, label, and title settings unmodified.
+
+Your plot should look like the one shown in the image below:
+
+
+Preview
+Correct!
+3
+Use colors to show different training levels
+
+In this activity, your goal is to create a scatter plot that illustrates the relationship between salary and sales within a dataset, with an added dimension of 'training level'. Each training level should be represented by a different color in the plot. This visualization will help in exploring how training level might correlate with or impact the relationship between an employee's salary and their sales performance.
+
+Follow the steps outlined in the template to create your scatterplot.
+
+Note: The key requirement is to keep the default figure size, color, label, and title settings unmodified.
+
+Your plot should look like the one shown in the image below:
+
+
+Preview
+Correct!
