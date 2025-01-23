@@ -1,0 +1,169 @@
+Line plots
+In this lab, we will explore the concept of relationship plots, which are crucial for understanding the connections and correlations between different variables in a dataset. We will use Matplotlib and NumPy to create and visualize simulated data. This approach helps in understanding how changes in one variable can affect another, a fundamental aspect of data analysis.
+
+By the end of this lab, you will be able to generate simulated datasets and create basic plots that demonstrate relationships between variables using Matplotlib.
+
+Line plots
+Different Types of Relationship Plots:
+
+Line Plots: Best suited for showing trends over time or continuous data. Line plots can be used to infer the relationship between variables and to forecast future trends.
+To create simulated data suitable for line plots, we can generate a simple dataset where one variable changes over time or in relation to another variable.
+
+# Generate time points (e.g., months)
+time = np.arange(0, 60, 1)  # 60 months (5 years)
+
+# Generate revenue data with a trend and some randomness
+np.random.seed(0)  # Seed for reproducibility
+trend = time * 1.5  # Trend: Revenue increases over time
+variability = np.random.normal(0, 10, size=time.size)  # Random variability
+
+# Total revenue is a combination of trend and variability
+revenue = trend + variability
+
+# Plot the simulated data
+plt.plot(time, revenue)
+plt.title("Simulated Company Revenue Over Time")
+plt.xlabel("Time (Months)")
+plt.ylabel("Revenue (in thousands)")
+plt.show()
+
+Preview
+This example creates a simple yet realistic scenario for a line plot, where the revenue of a company increases over time with some month-to-month variability. The plot will show an overall upward trend, which is typical in line plot visualizations for time series data.
+
+In the next part of our lab, we'll explore how to plot a mathematical function using Matplotlib, specifically the sine function over an interval. Now let's create a plot of the sine function, sin(x), with x in the [0, 2 * pi] interval.
+
+# Create points for the curve
+X = np.linspace(0, 2 * np.pi, 100)  # Evenly spaced points from 0 to 2*pi
+Y = np.sin(X)  # Sine of each point in X
+
+# Plot the sine curve
+plt.plot(X, Y)
+plt.title('Sine Curve')
+plt.xlabel('X')
+plt.ylabel('sin(X)')
+plt.grid(True)
+plt.show()
+
+Preview
+The resulting plot is a classic representation of the sine wave, showcasing its periodic nature. This exercise is a practical example of how mathematical functions can be visualized and interpreted using Python's visualization libraries.
+
+Plotting multiple curves
+One of the reasons we plot curves is to compare those curves. Are they matching? Where do they match? Where do they not match? Are they correlated?.
+
+Let's create an example where we compare two curves to understand their similarities, differences, and correlations. This example will involve plotting and comparing the sine and cosine functions over the same interval. The goal is to visually assess where these curves match, where they diverge, and how they might be correlated.
+
+# Create points for the curves
+X = np.linspace(0, 2 * np.pi, 100)
+Y_sine = np.sin(X)
+Y_cosine = np.cos(X)
+
+# Plot the sine and cosine curves
+plt.plot(X, Y_sine, label='sin(X)')
+plt.plot(X, Y_cosine, label='cos(X)', linestyle='--')
+plt.title('Sine vs. Cosine')
+plt.xlabel('X')
+plt.ylabel('Value')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+Preview
+The resulting plot illustrates how the sine and cosine functions are similar yet shifted in phase. By comparing these curves, we can see that they intersect at certain points, indicating where their values are equal.
+
+Scatter Plots
+Scatter Plots: Ideal for visualizing the relationship between two continuous variables. They help in identifying patterns, trends, and possible outliers in data.
+You'll learn how to create scatter plots and line plots to illustrate the relationships between the variables in your simulated data.
+
+For instance, here's how you can create a scatter plot of a simulated data:
+
+
+x = np.linspace(0, 10, 100)
+y = 2 * x + np.random.normal(size=100)
+
+plt.scatter(x, y)
+plt.title("Simulated Data Relationship")
+plt.xlabel("X Variable")
+plt.ylabel("Y Variable")
+plt.show()
+
+Preview
+In this section of the lab, we will explore how to use scatter plots in Matplotlib to compare two different datasets – in this case, representing data for 'girls' and 'boys' – across a set of average values ('promedio'). This type of visualization is particularly useful for examining the relationship and distribution of two groups in relation to a common scale.
+
+When you run the following code, you will see a scatter plot with red and blue dots representing 'girls' and 'boys' data points, respectively. The horizontal axis (x-axis) represents the 'promedio' values, while the vertical axis (y-axis) shows the corresponding values from the 'girls' and 'boys' lists. This visualization allows you to quickly compare how each group aligns with the average values, helping to identify trends, outliers, or differences between the groups.
+
+girls = [89, 90, 70, 89, 100, 80, 90, 100, 80, 34]
+boys = [30, 29, 49, 48, 100, 48, 38, 45, 20, 30]
+prom = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+fig = plt.figure(figsize=(5,2)); ax = plt.axes()
+
+ax.scatter(prom, girls, color='r')
+ax.scatter(prom, boys, color='b')
+
+ax.set_xlabel('Mean'); ax.set_ylabel('Total'); ax.grid()
+ax.set_title('Visualizing Data by Gender with Scatter Plots'); ax.legend(labels=['Girls', 'Boys'])
+plt.show()
+
+Preview
+Using a line plot for the given dataset – where 'girls' and 'boys' data are compared against (average) values – might not be the best choice for several reasons:
+
+Nature of the Data: Line plots are ideal for continuous data, especially where each data point is related to the next one, like time series data. In this scenario, the 'girls' and 'boys' data points are distinct and independent of each other, and the 'promedio' values likely represent categories or discrete intervals rather than a continuous sequence. A line connecting these points would imply a continuity or relationship between them that doesn't exist.
+
+Misleading Interpretation: Using a line plot could suggest that there is a direct progression or trend from one point to the next, which can be misleading.
+
+In a case where the goal is to compare two distinct groups across a range of discrete values or categories, a scatter plot is more appropriate and informative than a line plot. It accurately represents the individual data points and makes it easier to compare the groups without implying incorrect relationships or trends.
+
+Exercise
+1
+Understanding Scatter Plots
+
+Which of the following best describes a scenario where a scatter plot is the most appropriate type of visualization?
+
+
+When you are displaying the frequency distribution of a single variable.
+
+
+When you want to show the trend of a variable over a continuous time period.
+
+
+When you are comparing the mean values of different categories.
+
+
+When you want to examine the relationship between two different quantitative variables.
+
+Correct!
+2
+Understanding Line Plots
+
+In which of the following scenarios would a line plot be the most suitable choice for data visualization?
+
+
+To compare the total sales of different product categories in a quarter.
+
+
+To show the relationship between height and weight in a group of individuals.
+
+
+To display the change in temperature over a year, with data points for each month.
+
+
+To visualize the distribution of exam scores in a class.
+
+Correct!
+3
+Visualizing Yearly Passenger Numbers
+
+In this exercise, you will visualize the total number of passengers traveling each year using the "flights" dataset from Seaborn. Your task involves aggregating the monthly passenger data into yearly totals and creating a line plot to visualize these totals over time.
+
+Load the Dataset: Load the "flights.csv" dataset into a variable named flights.
+Aggregate Data: Group the data by year and calculate the total number of passengers for each year. Store the aggregated data in a variables name yearly_passengers.
+Create the Plot: Use Matplotlib to plot the yearly passenger numbers. Your plot should have years on the x-axis and the total number of passengers on the y-axis and should be titled "Yearly Passenger Numbers" with appropriate labels x-axis and y-axis as "Year" and "Number of Passengers" respectively. Save the plot as a variable named fig.
+Expected outcome:
+
+Your plot should look something like this: imageDescription
+
+Correct!
+Conclusion and Practice
+In this lab, you've learned how to set up Matplotlib and NumPy, generate simulated data, and create plots to visualize relationships between variables. These skills are foundational in data analysis, helping you to understand and communicate data-driven insights effectively.
+
+We encourage you to practice with different types of data relationships and explore more complex scenarios as you continue to develop your data visualization skills.
