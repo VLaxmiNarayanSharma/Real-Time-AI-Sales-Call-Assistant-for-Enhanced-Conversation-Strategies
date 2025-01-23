@@ -1,0 +1,223 @@
+Quiz
+Simpson's Paradox is a statistical phenomenon where the direction or strength of an association between two variables changes when the data is divided into sub-groups. This paradox highlights the importance of considering the impact of confounding variables and the necessity of interpreting data cautiously.
+
+Simpson's Paradox
+The objective of this project is to understand Simpson's Paradox and its implications using data visualization with Matplotlib.
+
+"Don't worry if you don't fully understand the code right now. We will progress step by step, and you'll learn how to create different charts as we explore this project. The main focus here is to grasp the importance of data visualization and how it can unveil valuable insights."
+
+For this lab, we'll create two datasets with variables x and y. Each dataset represents a different scenario.
+
+# Dataset 1
+x1 = [1, 2, 3, 4, 5]
+y1 = [5, 4, 3, 2, 1]
+
+# Dataset 2
+x2 = [1, 2, 3, 4, 5]
+y2 = [1, 2, 3, 4, 5]
+Let's create scatter plots for both datasets to visualize the association between x and y.
+
+plt.figure(figsize=(12, 4))
+
+# Scatter plot for Dataset 1
+plt.subplot(121)
+plt.scatter(x1, y1, label='Dataset 1')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Association in Dataset 1')
+plt.legend()
+
+# Scatter plot for Dataset 2
+plt.subplot(122)
+plt.scatter(x2, y2, label='Dataset 2')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Association in Dataset 2')
+plt.legend()
+
+plt.tight_layout()
+plt.show()
+
+Preview
+Interpretation
+
+Examine the scatter plots for both datasets. Discuss the associations that you observe in each dataset. Ask questions like:
+
+What is the general trend in Dataset 1?
+What is the general trend in Dataset 2?
+Do you notice any differences in the associations?
+Simpson's Paradox
+
+Now, let's introduce Simpson's Paradox. Combine the two datasets into a single dataset and create a scatter plot to observe the overall association.
+
+# Combine datasets
+x_combined = x1 + x2
+y_combined = y1 + y2
+
+# Scatter plot for the combined dataset
+plt.figure(figsize=(6, 4))
+plt.scatter(x_combined, y_combined, label='Combined Dataset', color='purple')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Association in Combined Dataset')
+plt.legend()
+plt.show()
+
+Preview
+Discuss the paradoxical result:
+
+Does the overall association in the combined dataset match the associations observed in Datasets 1 and 2?
+How can this phenomenon occur?
+Conclusion:
+
+Simpson's Paradox reminds us that the interpretation of data can be more complex than it appears at first glance. Associations between variables can change when considering sub-groups, and the presence of confounding variables can lead to unexpected results. Data visualization plays a crucial role in uncovering and understanding such paradoxes in real-world data analysis.
+
+Encourage students to remain vigilant when analyzing data and to consider the impact of sub-groups and confounding variables to arrive at accurate conclusions. Understanding Simpson's Paradox is an essential skill in data analysis and statistics.
+
+Exploring Simpson's Paradox with UC Berkeley Admission Data
+To understand and practice Simpson's Paradox using real-world admission data from UC Berkeley.
+
+Load the admission_data.csv into a Pandas DataFrame df.
+
+# Load the UC Berkeley admission data into a DataFrame
+df = pd.read_csv('admission_data.csv')
+Explore the admission data to understand its structure. Use commands like df.head() to view the first few rows and df.info() to check for missing values.
+
+# Explore the data
+print(df.head())
+print(df.info())
+The sample dataset contains admissions data for six graduate departments at UC Berkeley and includes admission status and gender. The table below shows the overall numbers of male and female students admitted and rejected.
+
+# Group and aggregate the data by gender
+summary_df = df.groupby('gender').agg(
+    Admitted_Total=pd.NamedAgg(column='admitted', aggfunc='sum'),
+    Rejected_Total=pd.NamedAgg(column='admitted', aggfunc=lambda x: len(x) - sum(x)),
+    Total=pd.NamedAgg(column='admitted', aggfunc='count')
+).reset_index()
+
+# Print the summary table
+print(summary_df)
+The graph below further shows that the number of males admitted is more than twice the number of females admitted.
+
+# Calculate the counts for the statement
+female_admitted_count = summary_df[summary_df['gender'] == 'female']['Admitted_Total'].values[0]
+male_admitted_count = summary_df[summary_df['gender'] == 'male']['Admitted_Total'].values[0]
+
+# Check if the number of males admitted is more than twice the number of females admitted
+is_more_than_twice = male_admitted_count > (2 * female_admitted_count)
+
+# Create the bar chart
+categories = ['Female Admitted', 'Male Admitted']
+counts = [female_admitted_count, male_admitted_count]
+
+plt.figure(figsize=(8, 6))
+plt.bar(categories, counts, color=['lightcoral', 'salmon'])
+plt.title('Comparison of Admitted Students by Gender')
+plt.ylabel('Count')
+
+plt.show()
+
+Preview
+In the next graph, the proportions of males and females admitted are compared. Not only are more males being admitted to UC Berkeley, the proportion of males admitted is higher than the proportion of females.
+
+gender_admission = df.groupby(['gender', 'admitted']).size().unstack(fill_value=0)
+# Calculate the proportions
+gender_admission['Total'] = gender_admission[True] + gender_admission[False]
+gender_admission['Admitted_Proportion'] = gender_admission[True] / gender_admission['Total']
+gender_admission['Rejected_Proportion'] = gender_admission[False] / gender_admission['Total']
+
+# Create a stacked bar chart
+plt.figure(figsize=(8, 6))
+plt.bar(gender_admission.index, gender_admission['Admitted_Proportion'], label='Admitted', color='lightgreen')
+plt.bar(gender_admission.index, gender_admission['Rejected_Proportion'], label='Rejected', bottom=gender_admission['Admitted_Proportion'], color='lightcoral')
+plt.xlabel('Gender')
+plt.ylabel('Proportion')
+plt.title('Proportional Stacked Bar Chart by Gender (Admitted vs. Rejected)')
+plt.legend()
+plt.show()
+
+
+Preview
+To check for Simpson’s Paradox, we should consider other variables that may be lurking and affecting the result. In the case of the UC Berkeley data, statistician Peter Bickel analyzed the graduate admission data by department, and found that disaggregating the data by departments changed the results (Grigg, 2018).
+
+Graduate Admissions by Department
+In our example data, we see what happens when the data are disaggregated and analyzed by department. The graph below shows the numbers of males and females admitted by the two graduate departments.
+
+# Group the data by Major and Admitted status
+major_admission = df.groupby(['major', 'admitted']).size().unstack(fill_value=0)
+
+# Create a bar chart
+major_admission.plot(kind='bar', stacked=True, figsize=(10, 6))
+plt.xlabel('Major')
+plt.ylabel('Count')
+plt.title('Number of Admitted and Rejected Students by Major')
+plt.legend(title='Admitted', labels=['Rejected', 'Admitted'])
+plt.xticks(rotation=45)
+plt.show()
+
+Preview
+The next graph shows the proportion of male and female students admitted to each department.
+
+# Group the data by Major and Gender
+major_gender_admission = df.groupby(['major', 'gender', 'admitted']).size().unstack(fill_value=0)
+
+# Calculate the proportions
+major_gender_admission['Total'] = major_gender_admission[True] + major_gender_admission[False]
+major_gender_admission['Proportion'] = major_gender_admission[True] / major_gender_admission['Total']
+
+# Pivot the DataFrame for plotting
+pivot_major_gender_admission = major_gender_admission.reset_index().pivot(
+    index='major',
+    columns='gender',
+    values='Proportion'
+)
+
+# Create a bar chart
+pivot_major_gender_admission.plot(kind='bar', figsize=(10, 6))
+plt.xlabel('Major')
+plt.ylabel('Proportion')
+plt.title('Proportion of Male and Female Students Admitted to Each Department')
+plt.legend(title='Gender', labels=['Female', 'Male'])
+plt.xticks(rotation=45)
+plt.show()
+
+Preview
+Observe the Paradox
+
+The proportions of female students admitted to each mayor are higher than the proportions of males admitted to those departments.
+
+This sample data demonstrates Simpson’s Paradox in that the overall result of males having higher admission rates does not hold when the data are disaggregated by department. Department is a lurking variable that should be taken into account in the data.
+
+Quiz
+1
+What is Simpson's Paradox?
+
+
+A paradox in geometry
+
+
+A statistical phenomenon where associations between variables change when data is divided into subgroups
+
+
+A paradox in computer programming
+
+
+A physical phenomenon where associations between variables change when data is combined
+
+Correct!
+2
+In a graphical representation of Simpson's Paradox, what does it look like when there is a reversal of an association between two variables?
+
+
+The lines on the graph form a straight line
+
+
+The lines on the graph diverge in opposite directions
+
+
+The lines on the graph overlap perfectly
+
+
+The lines on the graph intersect
+
+Correct!
