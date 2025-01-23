@@ -1,0 +1,156 @@
+Time Series Visualization
+In this project, we will create evolution plots to visualize how a variable changes over time. Evolution plots are helpful for visualizing trends, patterns, or growth of a particular variable, making it easier to analyze and understand time-series data.
+
+Let's generate sample data to represent the evolution of a variable over time. You can use NumPy or any other data source.
+
+import numpy as np
+
+# Sample time points (months)
+time_points = np.arange(1, 13)
+
+# Sample variable values (e.g., monthly sales)
+variable_values = np.array([45, 50, 55, 40, 65, 60, 75, 70, 85, 80, 95, 100])
+Use Matplotlib to create the evolution plot by plotting the time points on the x-axis and the variable values on the y-axis. This code will generate an evolution plot displaying the progression of a variable over the course of 12 months, which you can further customize and analyze as needed.
+
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(time_points, variable_values, marker='o', color='blue', linestyle='-')
+ax.set_title('Evolution of Variable Over Time')
+ax.set_xlabel('Time Points')
+ax.set_ylabel('Variable Value')
+ax.grid(True)
+plt.show()
+
+Preview
+Note: In this project, we will only delve into the details of generating figures and not into the specifics of how to analyze time series.
+
+Evolution plots
+Evolution plots, also known as time series plots, are a type of data visualization used to display how a variable changes over time. These plots are commonly used in various fields, including economics, finance, climate science, and social sciences, to analyze trends, patterns, and fluctuations in time-dependent data. Here are some key characteristics and features of evolution plots:
+
+Time as the X-Axis: Evolution plots have time or a sequential variable (e.g., months, years, time points) on the x-axis. This axis represents the progression of time or the order in which data points were collected.
+
+Variable of Interest on the Y-Axis: The y-axis of an evolution plot represents the variable of interest that you want to visualize. This variable could be anything that changes over time, such as stock prices, temperature, sales, or population.
+
+Data Points Connected by Lines: In most cases, data points representing measurements or observations at different time intervals are connected by lines. This line connection helps visualize the continuity and smoothness of the variable's evolution.
+
+Markers or Symbols: Data points are often marked with symbols (e.g., circles, squares, triangles) or dots to make them more distinguishable and to emphasize specific data points, if necessary.
+
+Title and Labels: Evolution plots typically include a title that describes the purpose or content of the plot. The x-axis and y-axis are labeled to indicate the meaning of the time and variable values.
+
+Gridlines: Gridlines may be added to the plot to assist in reading and interpreting data values accurately.
+
+Customization: Evolution plots can be customized to improve their clarity and visual appeal. You can change the color, line style, marker style, and other visual attributes to suit your preferences or to emphasize specific aspects of the data.
+
+Analysis of Trends: Evolution plots are useful for identifying trends, cycles, seasonality, and irregular patterns in the data. Trendlines or moving averages can be added to highlight long-term trends.
+
+Data Annotations: Annotations or labels may be added to the plot to provide additional information about specific data points or events in the time series.
+
+Multiple Variables: Evolution plots can also display multiple variables on the same plot, allowing for comparisons and correlations between different aspects of the data.
+
+In summary, evolution plots are a fundamental tool in time series analysis, providing a visual representation of how a variable changes over time. They are valuable for detecting patterns and making informed decisions in various domains where time-dependent data is collected and analyzed.
+
+Time Series Visualization
+Minimum Daily Temperatures Dataset
+This dataset describes the minimum daily temperatures over 10 years (1981-1990) in the city Melbourne, Australia.
+
+The units are in degrees Celsius and there are 3,650 observations. The source of the data is credited as the Australian Bureau of Meteorology.
+
+Basic Time Series Plot
+First, we'll plot the entire time series to observe the overall temperature trends.
+
+import matplotlib.dates as mdates
+
+# Convert the 'Date' column to datetime
+temperature_data['Date'] = pd.to_datetime(temperature_data['Date'])
+
+# Set the 'Date' column as the index
+temperature_data.set_index('Date', inplace=True)
+
+# Check for missing values
+missing_values = temperature_data.isnull().sum()
+
+# Display missing values
+missing_values
+# Basic Time Series Plot
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.plot(temperature_data.index, temperature_data['Temp'], color='blue', alpha=0.5)
+ax.set_title('Daily Minimum Temperatures in Melbourne (1981-1990)')
+ax.set_xlabel('Date')
+ax.set_ylabel('Temperature (°C)')
+ax.xaxis.set_major_locator(mdates.YearLocator())
+plt.show()
+
+Preview
+Rolling Average Plot
+We will calculate a rolling average with a window size that captures a meaningful trend, and plot it to smooth out short-term fluctuations. A common choice for time series data like this is a 12-month rolling average, which helps in identifying yearly trends. ​
+
+# Calculate a 12-month rolling average
+rolling_avg = temperature_data['Temp'].rolling(window=12).mean()
+# Plot the rolling average
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.plot(temperature_data.index, temperature_data['Temp'], color='blue', alpha=0.5, label='Original')
+ax.plot(temperature_data.index, rolling_avg, color='red', label='12-Month Rolling Average')
+ax.set_title('12-Month Rolling Average of Temperature')
+ax.set_xlabel('Date')
+ax.set_ylabel('Temperature')
+ax.legend()
+plt.show()
+
+Preview
+The red line in the plot represents the 12-month rolling average of the temperature, which smooths out the fluctuations and highlights longer-term trends.
+
+Monthly Averages
+Finally, let's calculate and visualize the average temperature for each month across all years in the dataset. This will provide insights into the monthly seasonal effects. ​​
+
+ # Calculate the monthly averages
+monthly_avg = temperature_data.resample('M').mean()
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.scatter(monthly_avg.index.month, monthly_avg['Temp'], color='green')
+ax.set_title('Average Monthly Temperature')
+ax.set_xlabel('Month')
+ax.set_ylabel('Average Temperature')
+ax.set_xticks(range(1, 13))
+ax.grid(True)
+plt.show()
+
+Preview
+The plot illustrates the average monthly temperature, revealing the seasonal patterns within each year. Peaks and troughs correspond to the warmer and cooler months, respectively. This visual helps in understanding how temperature varies on a monthly basis across the entire dataset.
+
+These visualizations provide a comprehensive analysis of the temperature time series data.
+
+Quiz
+1
+What does a time series plot typically represent in data analysis?
+
+
+The comparison between different categorical groups over a period of time.
+
+
+The distribution of a single variable at a specific point in time.
+
+
+The change in a single variable over a period of time.
+
+
+The correlation between two variables at different points in time.
+
+Correct!
+A time series plot is a graphical representation used in statistics and data analysis to display the changes in a single variable over a period of time. This type of plot is particularly useful for observing trends, patterns, seasonal variations, and anomalies in data that is recorded over time intervals, which is why option c is the correct answer. Options a, b, and d describe other types of data visualizations and analyses that are not specifically related to the characteristics of a time series plot.
+
+2
+True or False: This plot created using the temperature dataset is an example of an evolution chart.
+
+# Plotting temperature against itself to create a meaningless plot
+fig, ax = plt.subplots(figsize=(12, 6))
+ax.plot(temperature_data['Temp'], temperature_data['Temp'], color='purple', label='Incorrect Plot')
+ax.set_title('Incorrect Time Series Plot')
+ax.set_xlabel('Temperature')
+ax.set_ylabel('Temperature')
+ax.legend()
+plt.show()
+
+Yes
+
+
+No
+
+Correct!
