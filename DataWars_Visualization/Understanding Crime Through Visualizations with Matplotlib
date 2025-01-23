@@ -1,0 +1,394 @@
+Activities
+In this project, you'll explore crime data from Atlanta using Matplotlib. We'll dive into the numbers to see when and where crimes occur, what types are most common, and how they vary across neighborhoods.
+
+This project is an opportunity to use real-world data to uncover important insights about crime in Atlanta. By visualizing this data, you'll not only sharpen your skills with Matplotlib, but also gain a deeper understanding of the patterns and trends that affect communities in the city. Let’s get started and see what the data reveals about crime in Atlanta.
+
+Activities
+1
+Plot the Number of Crimes That Occurred Each Day
+
+First, drop the Unnamed columns, then convert the date column in your DataFrame to a datetime format. Next, group the data by date and count the number of crimes that occurred each day. Create a line plot using the following parameters:
+
+Figure size : 10 by 6
+
+Color : Blue
+
+Title : Daily Crime Counts
+
+xlabel : Date
+
+ylabel : Number of Crimes
+
+Add a grid for clarity. Finally, display the plot. This will help you identify trends and patterns in crime rates across different months.
+
+Expected outcome:
+
+Your plot should match the image below imageDescription
+
+Correct!
+2
+Create a bar chart showing the total number of each crime type.
+
+Begin by counting the occurrences of each crime on the crime column, summarizing how often each type of crime appears. Then plot the graph using the following information:
+
+Figure size : 10 by 6
+
+Color : Red
+
+Title : Total Number of Each Crime Type
+
+xlabel : Crime Type
+
+ylabel : Number of Crimes
+
+Rotate the x-axis labels representing crime types by 45 degrees and align them to the right for better readability. Add grid lines to the y-axis using a dashed linestyle (--) with an alpha of 0.7 for a subtle visual guide. Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance. Finally, use plt.show() to display the chart, allowing you to visually compare the frequency of different crime types in your dataset.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+3
+Visualize the times crimes occurred.
+
+First, extract the day of the week from the date column. Then, count the number of crimes that happened on each day. Then, plot this information on a graph using the following details:
+
+Figure size : 10 by 5
+
+Color : Coral
+
+Edge color : Black
+
+Title : Number of Crimes by Day of the Week
+
+xlabel : Day of the Week
+
+ylabel : Number of Crimes
+
+Rotate the x-axis labels representing crime types by 45 degrees and align them to the right for better readability. Add grid lines to the y-axis using a dashed linestyle (--) with an alpha of 0.7 for a subtle visual guide. Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance. Finally, use plt.show() to display the chart.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+4
+Plot a Bar Chart Showing the Crime Numbers for the Top 10 Crime-prone Neighborhoods
+
+First, count the number of crimes in each neighborhood and then select the top 10 neighborhoods with the most crime counts. Create a bar chart of this information. The x-axis should represent the neighborhoods and the y-axis should depict the number of crimes. Make sure you add the following details to your chart:
+
+Figure size : 12 by 8
+
+Color : Teal
+
+Edge color : Black
+
+Title : Top 10 Neighborhoods with the Most Crimes
+
+xlabel : Neighborhood
+
+ylabel : Number of Crimes
+
+Finally rotate the x-axis labels for better readability(rotation=45, ha='right'), and add a dashed grid (--, alpha : 0.7) to the y-axis to help you compare the heights of the bars easily. Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance. Upon completion, you'll be able to visually analyze which neighborhoods experience the most crime.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+5
+Compare the occurrence of two specific crime types over time in a single line plot.
+
+Filter the DataFrame to include only rows with LARCENY-NON VEHICLE and BURGLARY-RESIDENCE. Then extract the year from the date column and group the filtered data by year and crime type, counting the number of occurrences. Plot the resulting data on a chart, where each line represents the trend of a specific crime type over time, using the following information:
+
+Figure size : 12 by 8
+
+marker : o
+
+Colors : red, blue
+
+Title : Comparison of Crime Types Over Time
+
+xlabel : Year
+
+ylabel : Number of Crimes
+
+Add a legend with the title Crime Type, and grid lines on both axes for better readability.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+6
+Create a scatter plot showing crime locations in Atlanta
+
+Use seaborn to plot the longitude (long) on the x-axis and latitude (lat) on the y-axis, with different colors for each crime type, specified by the tab10 palette. Adjust the point size with the s parameter and set the transparency with alpha to make overlapping points clearer. Add a title, x and y-axis labels, and place the legend outside the plot area for better clarity. Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance. Finally, include a grid to enhance readability and use plt.show() to display the plot. Here are the rest of the information for the plot:
+
+Figure size : 12 by 8
+
+Color palette : tab10
+
+Hue : crime
+
+s = 15
+
+Alpha : 0.7
+
+Title : Crime Locations in Atlanta by Crime Type
+
+xlabel : Longitude
+
+ylabel : Latitude
+
+Legend
+
+Title : Crime Type
+
+bbox_to_anchor : 1.05, 1
+
+loc : upper left
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+7
+Create a Stacked Bar Plot: Number of Crimes per Neighborhood Planning Unit (NPU) Categorized by Crime Type
+
+In this task, you will use the Pandas .plot() method to create a stacked bar chart to visualize the number of crimes committed in each Neighborhood Planning Unit (NPU), classified by crime type. Begin by grouping the data by NPU and crime. Count the occurrences and reshape the data into a DataFrame. Now, plot this data employing the details below:
+
+Figure size : 14 by 8
+
+Colormap : tab20
+
+Bar width :0.90
+
+Title : Number of Crimes in Each NPU, Broken Down by Crime Type
+
+xlabel : Neighborhood Planning Unit (NPU)
+
+ylabel : Number of Crimes
+
+Legend
+
+Title : Crime Type
+
+bbox_to_anchor : 1.05,1
+
+Loc : upper left
+
+Add a dashed grid(--, alpha : 0.7) to the y-axis to help you compare the heights of the bars easily. Also, apply tight_layout() to prevent any overlapping or clipping of plot elements.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+8
+Generate a Pie Chart to Show the Distribution of Crime Types
+
+Count the occurrences of each crime type, then generate a pie chart with labels, percentages, and a color scheme, title, and a circular shape, using the following details:
+
+Figure size : 10 by 10
+
+autopct :%1.1f%%
+
+Startangle : 140
+
+Colors : plt.cm.tab20.colors
+
+Title : Distribution of Crime Types
+
+This provides a visual representation of the relative prevalence of different crime types in the data. Also, apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+9
+You have a 3D scatter plot with color-coded categories. Which Matplotlib function would you use to create a legend for the categories?
+
+
+ax.legend()
+
+
+plt.legend()
+
+
+ax.colorbar()
+
+
+plt.colormaps()
+
+Correct!
+10
+Analyze Summer Crime Pattern
+
+First, filter the dataset to include only BURGLARY-RESIDENCE incidents, then create two subsets: one for the summer months (June, July, and August) and another for the rest of the year. Next, count the number of burglaries in each subset. Finally, generate a bar chart to visually compare the number of burglaries during summer versus other months. Use the following details to plot the graph:
+
+Figure size : 10 by 10
+
+Colors : Orange and blue
+
+Title : Number of Burglaries in Summer vs Other Months
+
+y-label : Number of Burglaries
+
+x-coordinates of bars: ['Summer Months', 'Other Months']
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+11
+How can you change the size of the figure in Matplotlib before plotting your data?
+
+
+plt.figure()
+
+
+Create separate legends for marker styles and labels using ax.legend() and plt.legend().
+
+
+Create a custom legend manually using ax.text() and ax.plot()
+
+
+Use ax.legend() with the scatterpoints argument.
+
+Correct!
+12
+How would you create a multi-plot figure in Matplotlib with independently scaled subplots but shared x-axis labels?
+
+
+Use plt.subplots() with sharey=False, and manually set the xlabel and ylabel for each subplot.
+
+
+Use plt.subplots() with sharex=True
+
+
+Use plt.subplot_mosaic() to create a grid of subplots with shared x-axis labels, while manually adjusting the y-axis limits for each subplot.
+
+
+Use plt.plots() with sharey, and then use ax.set_xlabel() and ax.set_ylabel() on each Axes object to set the labels individually.
+
+Correct!
+13
+Analyze the Trend of Different Robbery Types Over Time
+
+Start by focusing on only the specified robbery types: ['ROBBERY-PEDESTRIAN','ROBBERY-COMMERCIAL','ROBBERY-RESIDENCE']. Your task is to group this data by year and by robbery type, count the instances, and create a line plot to illustrate how each robbery type's frequency has changed over the years. Use the following parameters:
+
+Figure size : 12 by 8
+
+Title : Robbery Types Over Time
+
+y-label : Number of Crimes
+
+x-label : Year
+
+The plot should also include annotations to display the exact number of incidents for each data point.
+
+Annotations
+
+xytext : 0,10
+
+ha : center
+
+textcoords : offset points
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+14
+You have a complex plot with multiple subplots and annotations. How can you save the plot as an image file while maintaining its high quality and resolution?
+
+
+Use plt.savefig() with a high DPI value.
+
+
+Use plt.tight_layout() to adjust spacing between subplots.
+
+
+All of the above.
+
+
+Increase the figure size before saving.
+
+Correct!
+15
+You need to arrange multiple subplots in a grid layout. How can you customize the spacing between subplots, adjust their aspect ratios, and share axes across different subplots?
+
+
+Use the plt.tight_layout() function.
+
+
+Use the plt.subplots() function.
+
+
+Use the plt.grid() function.
+
+
+Create individual subplots using plt.subplot() and manually adjust their positions.
+
+Correct!
+16
+Visualize The Proportion of Robbery Types.
+
+First count the number of occurrences of each robbery type, then creates a pie chart where each slice represents the percentage of each type relative to the total.
+
+Figure size : 6 by 6
+
+autopct : %1.1f%%
+
+Colors : skyblue, lightgreen and lightcoral
+
+Title : Proportion of Robbery Types
+
+Apply tight_layout() to prevent any overlapping or clipping of plot elements, ensuring a clean and organized appearance.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+17
+How can you add custom annotations to your plots, including text, arrows, and other shapes? What are some advanced techniques for placing annotations precisely and making them visually appealing?
+
+
+All of the above.
+
+
+Use the plt.arrow() function.
+
+
+Use the plt.text() function.
+
+
+Use the plt.annotate() function.
+
+Correct!
