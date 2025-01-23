@@ -1,0 +1,100 @@
+Introduction
+Welcome to the Black Friday Sales Data Visualization Project! This exciting project is designed to dive deep into the bustling world of Black Friday, a significant event for both consumers and retailers. Black Friday, known for its extraordinary sales and high shopping volume, presents a unique opportunity to analyze consumer behavior, product preferences, and sales patterns.
+
+In this project, you will work with a comprehensive dataset of Black Friday sales.
+
+By the end of this project, you will have gained not only valuable technical skills in data analysis and visualization but also a deeper understanding of consumer behavior during one of the busiest shopping events of the year.
+
+Histograms
+A great way to get started exploring a single variable is with the histogram. A histogram divides the variable into bins, counts the data points in each bin, and shows the bins on the x-axis and the counts on the y-axis. In our case, the bins will represent the range of purchase amounts, and the count will be the number of purchases falling into that range. The binwidth is the most important parameter for a histogram and we should always try out a few different values of binwidth to select the best one for our data.
+
+To visualize the distribution of purchase amounts from the Black Friday sales dataset. This dataset includes various details such as user ID, product ID, gender, age, occupation, and notably, the purchase amounts for different products.
+
+1
+Histograms for the Black Friday Sales Dataset
+
+Create a histogram using Matplot's subplot function to capture the fig and ax objects for Purchase column of df dataframe. Set the number of bins to 20 and specify the edge color as black.
+
+Expected outcome:
+
+The figure should look like this:
+
+
+Preview
+Correct!
+Optimal binwidth
+The only way to figure out an optimal binwidth is to try out multiple values!
+
+Below is the code to create the same figure in Matplotlib using various bin widths. While there's no definitive right or wrong choice for bin width, I have opted for a 5 USD interval as it seems to most effectively represent the distribution.
+
+# Show 4 different binwidths
+for i, binwidth in enumerate([1, 5, 10, 15]):
+
+    # Set up the plot
+    ax = plt.subplot(2, 2, i + 1)
+
+    # Draw the plot
+    ax.hist(df['Purchase'], bins = int(180/binwidth),
+             color = 'blue', edgecolor = 'black')
+
+    # Title and labels
+    ax.set_title('Histogram with Binwidth = %d' % binwidth, size = 10)
+    ax.set_xlabel('Purchase Amount', size = 10)
+    ax.set_ylabel('Frequency', size= 10)
+
+plt.tight_layout()
+plt.show()
+
+Preview
+The selection of bin width is a crucial factor that substantially influences the appearance of the plot. Using smaller bin widths might lead to an overly congested plot, whereas larger bin widths could mask subtle details in the data. Although Matplotlib can automatically determine a suitable bin width, I prefer to manually set this parameter after experimenting with various values. Ultimately, there isn't a universally correct or incorrect choice for bin width. It's advisable to experiment with different options to find the one that most suitably represents your specific dataset.
+
+2
+When creating a histogram in Matplotlib, how does the choice of bin width affect the final visualization of the data?
+
+
+A larger bin width always provides a clearer and more accurate representation of the data.
+
+
+The choice of bin width affects the size of the plot but not the distribution of the data.
+
+
+The bin width has no impact on the visualization; it only affects the color scheme of the plot.
+
+
+Smaller bin widths can lead to a cluttered plot, while larger bin widths might obscure important details in the data.
+
+Correct!
+3
+Male and Female Purchase Amounts
+
+Create separate histograms to visualize and compare the distribution of purchase amounts among male and female customers. This analysis will provide insights into the spending patterns and preferences of the two gender groups.
+
+Before creating histograms, separate the data into two groups(series): one for male customers and one for female customers. Store the series in male_data and female_data.
+
+For each histogram, set the number of bins to 10 and specify the color of the bars to be blue for male and pink for female. Also, set the edge color to black for both histograms.
+
+Do not change the given code template in the notebook.
+
+Expected outcome:
+
+The plots should look like the images below:
+
+imageDescriptionimageDescription
+
+Correct!
+4
+Histograms for Class A Cities
+
+Create a histogram with 20 bins for the purchase variable specifically for Class A cities. Store the purchase data for Class A cities from this dataset in the variable class_a_data.
+
+Set the edge color as black.
+
+Do not change the given code template in the notebook.
+
+Expected outcome:
+
+Your plot should look like this:
+
+
+Preview
+Correct!
