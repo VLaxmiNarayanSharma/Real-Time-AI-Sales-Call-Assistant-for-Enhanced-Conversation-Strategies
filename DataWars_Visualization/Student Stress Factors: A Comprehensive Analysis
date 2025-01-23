@@ -1,0 +1,134 @@
+Introduction
+Introduction to Stress Level Data Visualization
+In the realm of mental health research and analysis, understanding stress levels and their underlying factors is crucial for developing effective interventions and support mechanisms. The "Stress Level Data Visualization" lab provides an immersive exploration into a dataset, named "StressLevelDataset.csv," which contains a rich array of variables that may influence or indicate stress levels in individuals. Through a series of data visualization activities, this lab aims to equip participants with the skills to analyze and interpret stress-related data, shedding light on potential correlations and patterns.
+
+Dataset Description
+The core of this lab lies in the exploration of the "StressLevelDataset.csv," a meticulously curated dataset designed to capture various aspects of individuals' mental well-being. The dataset includes parameters such as anxiety levels, self-esteem, mental health history, sleep quality, and a quantified measure of stress level. Each entry in the dataset represents a unique individual, providing a comprehensive overview of diverse factors that contribute to the complex landscape of stress.
+
+1
+Basic Histogram: Stress Level Distribution
+
+Create a bar plot to analyze the frequency of observations for each level of stress. To this activity you should calculate the frequency of each stress level.
+
+Your plot looks like below:
+
+
+Preview
+Note: The key requirement is to maintain the default figure size, color, label, and title settings without modification.
+
+Correct!
+<Figure size 640x480 with 0 Axes>
+2
+Box Plots: Distribution of Anxiety, Self-Esteem, and Depression
+
+Construct box plots to examine the distributions of anxiety level, self-esteem, and depression.
+
+Follow these steps to create your box plots:
+
+Use the provided code to generate box plots for the three variables: anxiety level, self-esteem, and depression.
+
+Ensure each box plot is labeled correctly corresponding to its respective variable.
+
+The box plots should be presented in a single figure for comparative analysis.
+
+Retain the default settings for figure size, color, labels, and title as specified in the code.
+
+Carefully observe the spread, median, and any potential outliers in the data for each variable.
+
+Once the plot is generated, analyze the differences and similarities between the distributions of these three mental health-related metrics.
+
+Your result looks like below:
+
+
+Preview
+Correct!
+<Figure size 640x480 with 0 Axes>
+3
+Scatter plot to analyze the relationship between anxiety level and depression level
+
+Create a scatter plot to explore the relationship between anxiety level and depression.
+
+Follow these steps to construct your scatter plot:
+
+Utilize the provided code to plot a scatter plot with 'anxiety level' on the x-axis and 'depression' on the y-axis.
+
+Ensure that each axis is appropriately labeled – 'Anxiety Level' for the x-axis and 'Depression' for the y-axis.
+
+The title of the plot should be 'Anxiety Level vs. Depression', as indicated in the code.
+
+Observe how the points are distributed in the plot. Look for any patterns or trends that indicate a relationship between anxiety level and depression.
+
+Maintain the default settings for figure size, color, and other plot characteristics as specified in the code.
+
+After generating the plot, analyze and interpret the potential correlation between the two variables.
+
+This scatter plot will help you understand the potential link between anxiety and depression through visual exploration.
+
+Your result looks like below:
+
+
+Preview
+Correct!
+<Figure size 640x480 with 0 Axes>
+4
+Bar chart to analyze the average stress level by mental health history
+
+Generate a bar chart to compare the average stress levels between individuals with and without a history of mental health issues.
+
+Follow these steps to create your bar chart:
+
+Use the provided code to calculate the average stress level for two groups: those with a mental health history and those without.
+
+Create a bar chart where each bar represents one of these two groups.
+
+Ensure the x-axis is labeled as 'Mental Health History' with two categories: 'No History' and 'History'.
+
+The y-axis should represent the 'Average Stress Level'.
+
+The title of the chart should be 'Average Stress Level by Mental Health History', as specified in the code.
+
+Observe the differences in average stress levels between the two groups.
+
+Keep the default settings for the figure size, color, and other plot characteristics unchanged as provided in the code.
+
+After generating the chart, analyze the results to understand how mental health history might correlate with stress levels.
+
+This bar chart will provide insights into the impact of mental health history on average stress levels.
+
+Your result looks like below:
+
+
+Preview
+Correct!
+<Figure size 640x480 with 0 Axes>
+5
+Pie chart to analyze the distribution of sleep quality ratings
+
+Create a pie chart to visualize the distribution of sleep quality ratings among participants.
+
+Follow these steps to construct your pie chart:
+
+Use the provided code to determine the frequency of each sleep quality rating in the dataset.
+
+Create a pie chart where each slice represents a different sleep quality rating. The size of each slice should correspond to the frequency of that rating.
+
+Ensure that each slice is labeled with its respective sleep quality rating.
+
+Include the percentage of each slice within the pie chart using the autopct parameter.
+
+The title of the chart should be 'Sleep Quality Distribution', as specified in the code.
+
+Observe the proportions of each sleep quality rating and how they contribute to the overall distribution.
+
+Maintain the default settings for the figure size and other plot characteristics as provided in the code.
+
+After generating the pie chart, analyze the data to understand the sleep quality trends among the participants.
+
+Your result looks like below:
+
+
+Preview
+This pie chart will help you visualize the various sleep quality levels within the dataset and their relative frequencies.
+
+Correct!
+<Figure size 640x480 with 0 Axes>
