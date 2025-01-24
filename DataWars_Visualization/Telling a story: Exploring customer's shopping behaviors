@@ -1,0 +1,96 @@
+This dataset provides a comprehensive overview of customer shopping behaviors, offering crucial insights for businesses aiming to deepen their understanding of their clientele. It includes various key features such as customer age, gender, amount spent on purchases, favored payment methods, purchasing frequency, and customer feedback ratings. The dataset also details the types of items bought, shopping frequency, preferred shopping seasons, and customer engagement with promotional offers. Comprising 3900 entries, this dataset is an invaluable resource for businesses seeking to leverage data-driven insights for improved strategic decision-making and the development of customer-focused approaches.
+
+The following table outlines the key features included in the customer shopping trends dataset. Each feature provides valuable insights into different aspects of customer behavior and preferences, essential for data-driven analysis in the retail sector.
+
+Feature	Description
+Customer ID	Unique identifier for each customer.
+Age	Age of the customer.
+Gender	Gender of the customer (Male/Female).
+Item Purchased	The item purchased by the customer.
+Category	Category of the item purchased.
+Purchase Amount (USD)	The amount of the purchase in USD.
+Location	Location where the purchase was made.
+Size	Size of the purchased item.
+Color	Color of the purchased item.
+Season	Season during which the purchase was made.
+Review Rating	Rating given by the customer for the purchased item.
+Subscription Status	Indicates if the customer has a subscription (Yes/No).
+Shipping Type	Type of shipping chosen by the customer.
+Discount Applied	Indicates if a discount was applied to the purchase (Yes/No).
+Promo Code Used	Indicates if a promo code was used for the purchase (Yes/No).
+Previous Purchases	Number of previous purchases made by the customer.
+Payment Method	Customer's most preferred payment method.
+Frequency of Purchases	Frequency at which the customer makes purchases (e.g., Weekly, Fortnightly, Monthly).
+Activities
+1
+Distribution of Customer Ages
+
+Create a histogram to visualize the distribution of customer ages in the dataset.
+
+Expected outcome:
+
+Your histogram should look like the image below:
+
+
+Preview
+Correct!
+2
+Distribution of Customer Gender
+
+First find the distribution of customer gender in the dataset then plot the distribution of customer gender using a histogram.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
+3
+Distribution of Top Items Purchased
+
+Find the distribution of the top 10 items purchased by customers in the dataset and plot the distribution using a bar chart.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
+4
+Purchase Distribution by Item Category
+
+Find the distribution of purchases by item category and plot the distribution using a pie chart.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
+5
+Average Purchase Amount by Item Category
+
+Find the average purchase amount for each item category and plot the average purchase amount using a bar chart.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
+6
+Purchase Distribution by Season
+
+Create a plot the distribution using a bar chart.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
