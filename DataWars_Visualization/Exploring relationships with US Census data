@@ -1,0 +1,38 @@
+Activities
+In this project, we'll start practicing how to create relationship plots, including point/line plots and scatter plots.
+
+To do so, we'll use The Washington Post's extensive database of fatal shootings by U.S. police officers, as well as from accompanying U.S. census datasets.
+
+The dataset we'll use is named hs_rate_poverty.csv and it contains a normalized measure of poverty and high school graduation per US state.
+
+We'll use point/line plots and scatter plots to analyze these relationships.
+
+Activities
+1
+Plotting and Comparing Socio-Economic Indicators with Matplotlib
+
+Create a visualization featuring two-point plots on the same graph.
+
+The first one represents normalized poverty rates, using df['normalized_poverty_rate'] and using a red marker (that is already provided).
+
+The second one representing normalized high school graduation rates, using df['normalized_hs_rate'], and using a blue x marker (already provided).
+
+This visualization will enable a comparative analysis of these two crucial socio-economic indicators across different states using Matplotlib.
+
+Your visualization should have a size of (14, 7) and look something like:
+
+
+Preview
+Note: We are helping you with the markers, colors, and titles.
+
+Correct!
+2
+Scatter Plotting Socio-Economic Indicators
+
+Create a scatter plot to visualize and analyze the relationship between the two key socio-economic indicators: the normalized high school graduation rate (normalized_hs_rate) and the poverty rate (normalized_poverty_rate) across different U.S. states.
+
+Use normalized_hs_rate in the X axis and normalized_poverty_rate in the Y axis. Your plot should look something like this:
+
+
+Preview
+Correct!
