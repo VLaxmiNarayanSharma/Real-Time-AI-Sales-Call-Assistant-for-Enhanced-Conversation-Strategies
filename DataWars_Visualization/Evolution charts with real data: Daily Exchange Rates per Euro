@@ -1,0 +1,90 @@
+Activities
+Evolution is a fascinating topic that encompasses changes and transformations over time. With Matplotlib, we will harness its capabilities to generate stunning figures that depict the evolutionary processes in a clear and visually appealing manner.
+
+Through this project, we will explore various techniques and features offered by Matplotlib, such as line plots, scatter plots, bar plots, and more. We will learn how to represent temporal data, highlight trends, and illustrate the progression of variables over time.
+
+Time series
+Time series plots are essential for analyzing data that changes over time, offering a visual representation of trends, patterns, and fluctuations within the dataset across a specific period. Here are several reasons why time series plots are relevant and valuable:
+
+Trend Analysis: Time series plots allow analysts and researchers to identify long-term trends in the data, whether they're upward, downward, or cyclical. This is crucial for understanding overall directions and making forecasts.
+
+Seasonality Detection: Many time series exhibit seasonal patterns—recurring fluctuations at specific intervals (daily, monthly, yearly, etc.). Time series plots help in spotting these seasonal trends, which is vital for businesses to plan inventory, marketing strategies, and resource allocation.
+
+Anomaly Detection: By visualizing data over time, anomalies or unusual spikes and drops become readily apparent. These anomalies could indicate errors, extraordinary events, or changes in the underlying system that require further investigation.
+
+Comparative Analysis: Time series plots can compare multiple datasets over the same period. This comparison is useful for understanding how different variables interact with each other or to benchmark against a key indicator.
+
+Decision Making: For businesses and policymakers, time series analysis is a cornerstone of informed decision-making. It provides a historical context, enables the evaluation of intervention impacts, and supports predictions about future conditions.
+
+Understanding Volatility: In financial markets, time series plots of asset prices, exchange rates, or interest rates help investors understand volatility and risk over specific periods, informing investment strategies.
+
+Operational Efficiency: In operational settings, time series data on production, sales, and customer demand help identify efficiency improvements and anticipate needs, ensuring smoother operations and customer satisfaction.
+
+Overall, time series plots are a fundamental tool in statistics, economics, finance, business, and many other fields, offering insights that are not easily obtained through other means of data analysis.
+
+Visualizing time series data effectively requires choosing a representation that highlights the data's temporal nature and trends. While bar charts can be useful for comparing discrete quantities or categories, they are not typically the best choice for time series data. While bar charts have their place in data visualization, line plots are generally more effective for displaying time series data because they better represent continuity, highlight trends, and are more visually efficient for conveying information over time.
+
+Activities
+1
+Visualize the evolution of the Euro to USD exchange rate over time, including a 30-day moving average to highlight trends.
+
+Plot the daily Euro to USD exchange rate as a background line to show daily fluctuations.
+Overlay the 30-day moving average on the plot to highlight the trend.
+We will guide you through these steps to achieve your goal. Run the following codes in your notebook to proceed:
+
+First, read the dataset containing the Euro to USD exchange rate data.
+data=pd.read_csv('euro-daily-hist_1999_2022.csv')
+data.head()
+Next, convert the 'Period\Unit:' column to a datetime format and set it as the index. Sort the DataFrame by date to ensure correct plotting.
+# Convert 'Period\Unit:' to datetime
+data['Period\\Unit:'] = pd.to_datetime(data['Period\\Unit:'])
+
+# Set 'Period\Unit:' as the index
+data.set_index('Period\\Unit:', inplace=True)
+
+# Sort the DataFrame by date to ensure correct plotting
+data.sort_index(inplace=True)
+A moving average is a statistical method used to smooth out short-term fluctuations and highlight underlying trends by calculating the average of data points over a specific period, which moves forward with each new data point.
+# Convert the '[US dollar ]' column to numeric, setting errors to NaN
+data['[US dollar ]'] = pd.to_numeric(data['[US dollar ]'], errors='coerce')
+
+# Recalculate the 30-day moving average with corrected data
+data['USD_MA_30'] = data['[US dollar ]'].rolling(window=30).mean()
+Finally, your task is to plot the daily Euro to USD exchange rate as a background line and overlay the 30-day moving average on the plot to highlight the trend.
+Use the given format to plot the data in notebook.
+
+Your plot looks like below:
+
+
+Preview
+Correct!
+2
+Monthly Average Exchange Rate of Chinese Yuan to USD
+
+Let's calculate and visualize the monthly average exchange rate of the Chinese Yuan to USD. This will help us understand the historical trends and fluctuations in the exchange rate between these two currencies.
+
+Plot the monthly averages to observe trends over time.
+
+Make sure to run the code provided in the notebook and use monthly_avg as the variable name for the monthly average exchange rate to complete this task.
+
+Your plot should look like the following:
+
+
+Preview
+Correct!
+3
+Compare Exchange Rates of AUD and CAD Against the Euro
+
+Visualize and compare the exchange rates of the Australian Dollar and the Canadian Dollar against the Euro over time.
+
+This activity allows you to compare how two currencies have moved in relation to the Euro over time, which can be particularly useful for identifying trends, similarities, or divergences in their performances.
+
+Plot both the Australian Dollar ('[Australian dollar ]') and the Canadian Dollar ('[Canadian dollar ]') exchange rates against the Euro on the same figure.
+
+Use the given format to plot the data in the notebook.
+
+Your plot should look like the following:
+
+
+Preview
+Correct!
