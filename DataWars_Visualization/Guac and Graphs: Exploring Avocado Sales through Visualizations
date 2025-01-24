@@ -1,0 +1,288 @@
+Getting Started with Visualizing Avocados
+Get ready to peel back the layers of data in this exciting project where avocados take center stage! We're not just talking guacamole, this is your chance to uncover the hidden trends and surprising stories behind avocado sales across the country.
+
+Imagine being able to track how the popularity of this green gem varies from region to region and from year to year. How do prices fluctuate? Which types of bags do customers prefer? This dataset holds the answers, and with Matplotlib, you’ll transform these raw numbers into eye-opening visual insights.
+
+Unnamed: 0:This is an index column from the dataset.
+
+Date:The date when the data was recorded.
+
+AveragePrice:The average price of avocados (in dollars) on the given date.
+
+Total Volume:The total quantity of avocados sold on the given date. This includes all types and sizes of avocados combined.
+
+4046:The volume of a specific type of avocado identified by the PLU (Price Look-Up) code 4046, which generally represents small-sized avocados.
+
+4225:The volume of avocados identified by the PLU code 4225, which typically corresponds to medium-sized avocados.
+
+4770:The volume of avocados identified by the PLU code 4770, often representing large-sized avocados.
+
+Total Bags:The total number of avocado bags sold. This includes all sizes of bags that contain avocados
+
+Small Bags:The volume of avocados sold in small bags.
+
+Large Bags:The volume of avocados sold in large bags.
+
+XLarge Bags:The volume of avocados sold in extra-large bags.
+
+type:The type of avocado, which can be either conventional or organic.
+
+year:The year in which the data was recorded.
+
+region:The geographical region where the sales data was collected.
+
+Getting Started with Visualizing Avocados
+1
+When creating a grid of subplots with plt.subplots(2, 2), which method call correctly sets the title for the subplot in the bottom right corner?
+
+
+plt.suptitle('Bottom Right')
+
+
+ax[2].set_title('Bottom Right')
+
+
+plt.title('Bottom Right')
+
+
+axs[1, 1].title.set_text('Bottom Right')
+
+Correct!
+2
+Visualize the Total Volume of Avocados Sold by Region through a Bar Chart
+
+This activity involves visualizing data related to avocado sales volume per region. Carry out the following steps:
+
+Start by grouping the DataFrame by region.
+
+Calculate the sum of avocados sold for each region and then reset the index of the resulting DataFrame.
+
+Order the regions by their total volume in descending order and exclude TotalUS to focus on individual regions.
+
+Represent the processed data in a bar chart where the x-axis denotes the regions and the y-axis indicates the total volume of sales.
+
+Use the following parameters while plotting:
+
+Figure size : 12 by 8
+
+Color : teal
+
+Title: Total Volume of Avocados Sold by Region
+
+xticks rotation : 90
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+3
+In a complex plot, you want to add annotations to specific points using ax.annotate(). Which parameter combination ensures that the annotation text is positioned above the annotated point?
+
+
+xytext=(0, 10), ha='center', va='bottom'
+
+
+xytext=(10, 0), ha='left', va='top'
+
+
+xytext=(-10, 0), ha='right', va='bottom'
+
+
+xytext=(0, -10), ha='center', va='top'
+
+Correct!
+4
+Create a line plot to visualize how the AveragePrice changes over time.
+
+Group the DataFrame by year to calculate the average of the AveragePrice of avocados for each year. Once you have that, create a line plot with the years on the x-axis and the average AveragePrice on the y-axis. Use the following information for your plot:
+
+Figure size : 10 by 6
+
+Colour : blue
+
+Title: Average Price of Avocados by Year
+
+markers : 'o'
+
+linestyle : '-'
+
+Finally, add gridlines to help visualize the changes in price more clearly, and then display your plot.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+5
+Plot a Histogram of AveragePrice to Understand its Distribution in the Dataset
+
+Begin by setting up your figure, ensuring to control the size of the plot to 10 by 6. Next, create a histogram to visualize how the average price of avocados is distributed. It is important to specify the number of bins - in this case, 10 - to break down the data. Choose colors that make the bars stand out, skyblue for the bars and black for the edges. Be sure to add labels to your axes and a title - Distribution of Average Price - so as to make clear what the histogram represents. Finally, include some gridlines along the y-axis for easier reading, with a linestyle of '--' and alpha setting of 0.7. Go ahead and display your plot to see how the prices are spread out.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+6
+Create a pie chart showing the proportion of Total Volume for each avocado type
+
+First, calculate the total volume for each avocado type 4046, 4225, and 4770 by summing up their respective columns. Use these totals to create a pie chart that shows the proportion each type contributes to the overall volume using the information below:
+
+Figure size : 8 by 8
+
+Colours : #66c2a5, #fc8d62, #8da0cb
+
+labels : '4046', '4225', '4770'
+
+Title: Proportion of Total Volume for Each Avocado Type
+
+autopct : %1.1f%%
+
+startangle : 140
+
+Finally, set the axis to be equal so your pie chart stays perfectly circular, then display it to see the breakdown of avocado types.
+
+Expected outcome:
+
+Your plot should look like the image below:
+
+
+Preview
+Correct!
+7
+Create a Scatter Plot of Total Volume Versus AveragePrice
+
+Figure size : 10 by 6
+
+Colour : green
+
+Title: Scatter Plot of Total Volume vs. Average Price
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+8
+Plot the sales of the different types of avocados (organic and conventional) to compare their trends.
+
+Group the DataFrame by the type column and sum the Total Volume for each avocado type (organic and conventional) . Then Plot a bar chart with the avocado types on the x-axis and their corresponding total sales volumes on the y-axis, using the following details:
+
+Figure size : 10 by 6
+
+Title : Total Volume of Avocados Sold by Type
+
+colors : #1f77b4, #ff7f0e
+
+Finally, use plt.show() to display your completed chart.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+9
+Compare Volumes of Small Bags, Large Bags, and XLarge Bags via Grouped Bar Charts
+
+First, extract the unique years from the dataset and define the width of the bars and their positions on the x-axis. You then create a figure and axis for plotting. Next, you plot three sets of bars, each representing the total sales of a different type of avocado bag (Small Bags, Large Bags, and XLarge Bags) for each year. To calculate these totals, you use the groupby function on the DataFrame, grouping the data by the year column and summing the sales for each bag type. This ensures that the bars represent the aggregated sales for each year. To distinguish between the bag types, the bars are color-coded: blue for Small Bags (left of center), green for Large Bags (centered), and red for XLarge Bags (right of center). Adjust the positions of the bars to avoid overlap. Customize the plot with a title, x-axis and y-axis labels, and a legend. Finally, display the plot with a tight layout to ensure everything fits well.
+
+Figure size : 10 by 6
+
+Title : Volume of Different Bag Sizes Over the Years
+
+colors : Small Bags ='blue', Large Bags='green', 'XLarge Bags='red'
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+10
+Investigate the AveragePrice Line
+
+Plot a time series chart showing daily average prices. Your task would include:
+
+Adding a horizontal line representing the overall average price.
+Adding annotations that marks the highest and lowest points on the graph.
+Start by grouping the data by year and calculating the average price of avocados for each year. This creates a series where each year is associated with its average price. You then identify the years with the highest and lowest average prices to highlight these key points.
+
+Then create a line graph of these yearly average prices, using the following information:
+
+Figure size : 10 by 6
+
+Colour : blue
+
+label : 'Yearly Average Price'
+
+marker: 'o'
+
+linestyle: '-'
+
+Horizontal line representing the overall average price
+
+color: 'red'
+
+linestyle : '--'
+
+label : 'Overall Average Price'
+
+Annotation of the maximum point
+
+Text : {max_price:.2f}
+
+Position: xy (max_year, max_price). Use xytext to position the text slightly above the point, (max_year, max_price + 0.05).
+
+Arrow Properties: arrowprops=dict(facecolor='green', shrink=0.05)
+
+Text Color: 'green' to match the text color with the arrow for consistency.
+
+Text Alignment: ha='center' to center the text horizontally over the point.
+
+Annotation of the minimum point
+
+Text : {min_price:.2f}
+
+Position: xy (min_year, min_price). Use xytext to position the text slightly below the point, (min_year, min_price - 0.05).
+
+Arrow Properties: arrowprops=dict(facecolor='red', shrink=0.05)
+
+Text Color: 'red' to match the text color with the arrow for consistency.
+
+Text Alignment: ha='center' to center the text horizontally over the point.
+
+Expected outcome:
+
+Your plot should match the image below:
+
+
+Preview
+Correct!
+11
+Which of the following statements is TRUE regarding the use of colormaps in Matplotlib?
+
+
+Custom colormaps can only be created by modifying existing colormaps.
+
+
+A colormap can only be applied to 3D plots created with mpl_toolkits.mplot3d.
+
+
+The cmap parameter is used to specify a colormap in functions like scatter and imshow.
+
+
+plt.colorbar() automatically adjusts to match the scale of the plot without any additional parameters.
+
+Correct!
