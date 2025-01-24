@@ -1,0 +1,166 @@
+Introduction to Advanced Plot Positioning Techniques in Data Visualization
+Effective data visualization is not just about creating individual plots; it's also about how these plots are positioned, sized, and organized to convey information clearly and compellingly. In this project, we delve into the world of advanced plot positioning, exploring the myriad of possibilities available for managing plot sizes, constructing multi-graphic grids, and other positioning techniques.
+
+Figures and subfigures
+When we call the subplots() function we get a tuple containing a Figure and a axes element.
+
+plot_objects = plt.subplots()
+
+fig, ax = plot_objects
+
+ax.plot([1,2,3], [1,2,3])
+
+plot_objects
+
+Preview
+We can also define how many elements we want inside our figure. To do that we can set the nrows and ncols params.
+
+plot_objects = plt.subplots(nrows=2, ncols=2, figsize=(14, 6))
+
+fig, ((ax1, ax2), (ax3, ax4)) = plot_objects
+
+plot_objects
+
+Preview
+ax1.plot(np.random.randn(50), c='red', linestyle='--')
+ax2.plot(np.random.randn(50), c='green', linestyle=':')
+ax3.plot(np.random.randn(50), c='blue', marker='o', linewidth=3.0)
+ax4.plot(np.random.randn(50), c='yellow')
+
+Preview
+Size of plots
+As it has been seen so far, the default size of the graphics rendering may not always be adequate (generally, excessively small if the number of elements in the graphic is high).
+
+In order to modify the size of the resulting graph, as we have seen, matplotlib offers us the function figure and the attribute figsize. Keep in mind that the size of the graph must be set prior to calling any of the pyplot functions.
+
+Let's import the diamonds dataset to explain these sections. This classic dataset contains the prices and other attributes of almost 54,000 diamonds. It's a great dataset for beginners learning to work with data analysis and visualization.
+
+cuts = list(diamonds['cut'].unique())
+
+x_values = [cuts.index(element) + np.random.uniform(-0.3, 0.3) for element in diamonds['cut']]
+y_values = diamonds['price']
+
+plt.figure(figsize=(10, 7))
+
+plt.scatter(x_values, y_values, color="black", alpha=0.1)
+
+plt.ylim(-0.5, 20000)
+plt.title("Price vs. Cut", weight="bold", size=15, color="0.3")
+plt.xlabel("Cut", weight="bold", size=12)
+plt.ylabel("Price", weight="bold", size=12)
+plt.xticks(range(0, 5), cuts, rotation=45)
+
+plt.show()
+
+Preview
+Multiple plots
+In matplotlib, to have multiple graphics within the same plot, we have to define the dimensions of the grid in which we will paint each graph and we have to manually place each figure in the place that corresponds to him.
+
+To make use of this positioning, matplotlib offers us the subplot2grid.
+
+cuts = list(diamonds['cut'].unique())
+
+plt.figure(figsize=(12, 3))
+
+for i, element in enumerate(cuts):    
+    plt.subplot2grid((1, len(cuts)), (0, i))
+    plt.hist(diamonds[diamonds['cut'] == element].loc[:, 'carat'].values)
+    plt.title(element)
+
+Preview
+The code creates a vertically stacked set of histograms, each in a separate subplot within a 10x10 figure, where each histogram represents the distribution of 'carat' values for a different 'cut' category in the diamonds dataset.
+
+cuts = list(diamonds['cut'].unique())
+
+plt.figure(figsize=(10, 10))
+
+for i, element in enumerate(cuts):    
+    plt.subplot2grid((len(cuts), 1), (i, 0))
+    plt.hist(diamonds[diamonds['cut'] == element].loc[:, 'carat'].values)
+    plt.title(element)
+
+Preview
+plt.tight_layout() is a function provided by Matplotlib that automatically adjusts the positions of the axes on the figure canvas so that there is less empty space and no overlapping content. It's a very handy method for making your plots look cleaner and more professional, especially when dealing with multiple subplots.
+
+cuts = list(diamonds['cut'].unique())
+
+plt.figure(figsize=(10, 10))
+
+for i, element in enumerate(cuts):    
+    plt.subplot2grid((len(cuts), 1), (i, 0))
+    plt.hist(diamonds[diamonds['cut'] == element].loc[:, 'carat'].values)
+    plt.title(element)
+
+plt.tight_layout()
+
+Preview
+Subplots
+In addition to enabling the positioning of graphics in the form of a grid, matplotlib allows us to include one graphic within another, so that we take advantage of the empty areas of a graphic to show additional information.
+
+To do this, matplotlib allows us to define the position of a new coordinate axis (using the function axes) and the call to any function of pyplot on this new axis.
+
+plt.figure(figsize=(10, 10))
+
+plt.scatter(diamonds.carat, diamonds.price, color="green", alpha=0.1)
+
+plt.xlim(0, 6)
+
+detail_axes = plt.axes([0.58, 0.18, 0.3, 0.3])
+detail_axes.scatter(diamonds.carat[(diamonds.price >= 200) & (diamonds.price <= 1700)], 
+                    diamonds.price[(diamonds.price >= 200) & (diamonds.price <= 1700)],
+                    color="red", alpha=0.1)
+
+Preview
+The code creates a 10x10 scatter plot of 'carat' vs 'price' for the entire diamonds dataset, with an additional detailed inset scatter plot focusing on a specific price range (200 to 1700) within the main plot.
+
+Quiz
+1
+What does the plt.subplots() function return in Matplotlib?
+
+
+An error message unless specific parameters are provided
+
+
+A list of figure objects
+
+
+A single figure and a single axes object
+
+
+A tuple containing a figure and axes object(s)
+
+Correct!
+2
+What is the correct way to create a 2x2 grid of subplots in Matplotlib?
+
+
+plt.subplots(nrows=2, ncols=2)
+
+
+plt.GridSpec(2, 2)
+
+
+plt.subplots(2, 2)
+
+
+plt.subplots(2 x 2)
+
+Correct!
+3
+In Matplotlib, which function is used to automatically adjust the layout of subplots to prevent overlapping and ensure clear presentation?
+
+
+plt.tight_layout()
+
+
+plt.layout_optimizer
+
+
+plt.adjust_layout()
+
+
+plt.layout_optimizer()
+
+Correct!
+Conclusion
+Mastering these advanced plot positioning techniques in Matplotlib opens up a new realm of possibilities in data visualization. By effectively utilizing these methods, you can create more informative, visually appealing, and insightful graphical representations of data.
