@@ -1,0 +1,75 @@
+Activities
+Analyzing High School Completion Rates Across U.S. Cities
+To practice data visualization skills by generating bar plots and pie charts using Python, focusing on the proportion of people over 25 who have completed high school in various U.S. cities.
+
+Dataset Description:
+
+The dataset contains information about the percentage of people over 25 who have completed high school in different cities across various geographic areas in the United States.
+
+Data Exploration and Cleaning
+Use Python and Pandas library to load the dataset into a dataframe. Then display the first few rows of the dataset to get an overview of the data.
+
+Check for missing values and the data types of each column to ensure they are appropriate.
+
+Activities
+1
+Construct a Bar Plot for State-Wise Comparison
+
+Calculate the average high school completion rate for each state and visualize these averages using a bar plot. This will help in comparing the education level across different states.
+
+Your task:
+
+Use the code from in notebook to find average high school completion rate for each state, defined in the variable state_averages.
+
+Create a bar plot to compare these averages across states.
+
+Instructions:
+
+Define the figure and axes using fig1, ax1 = plt.subplots(figsize=(15, 7)).
+Set appropriate labels and title:
+
+ax1.set_xlabel('State')
+ax1.set_ylabel('Average Completion Rate (%)')
+ax1.set_title('Average High School Completion Rate by State')
+Choose the skyblue color palette that is visually appealing.
+Define the title as : Average High School Completion Rate by State
+Your bar plot should look similar to the sample image provided. imageDescription
+
+Correct!
+2
+Create a Pie Chart of Top 5 Cities with Highest High School Completion Rate
+
+Identify the top 5 cities with the highest high school completion rates from the dataset and to create a pie chart that effectively visualizes the proportion of high school completion rates in these cities.
+
+Your task:
+
+Use the top_cities which contains sorted dataset based on the 'percent_completed_hs' column to find the top 5 cities with the highest high school completion rates.
+Create a bar plot to compare these averages across states.
+Instructions:
+
+Define the figure and axes using fig2, ax2 = plt.subplots(figsize=(8, 8)).
+Ensure that the pie chart includes labels for each city, along with the percentage of the total that each city represents.
+Choose a distinct color scheme to clearly differentiate each city. Use: ['gold', 'yellowgreen', 'lightcoral', 'lightskyblue', 'lavender'] .
+Define the title as: Top 5 Cities with Highest High School Completion Rates
+Your pie chart should look similar to the image below.
+
+
+Preview
+Correct!
+3
+Pie Chart - Category Comparison in Oak Grove town
+
+Focus on a specific city that exhibits a diverse range of high school completion rates, categorize these rates into defined groups, and create a pie chart to visually represent these categories. This will help in understanding the distribution of education levels within a selected city.
+
+Your task:
+
+Select Oak Grove town city and Categorize Completion Rates:
+
+Choose Oak Grove town from the dataset that shows a varied distribution of high school completion rates.
+Categorize the completion rates into distinct groups (e.g., below 50%, 50-75%, above 75%).
+Count the number of occurrences in each category.
+Your pie chart should look similar to the sample image provided.
+
+
+Preview
+Correct!
