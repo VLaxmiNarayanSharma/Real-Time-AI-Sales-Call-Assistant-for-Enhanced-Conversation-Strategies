@@ -1,0 +1,134 @@
+Data visualization is a crucial skill in data analysis, allowing us to understand trends, patterns, and insights from data. This lab introduces the fundamentals of data visualization with a focus on Matplotlib, a popular Python library for creating a wide range of static, animated, and interactive visualizations.
+
+We'll start by discussing the importance of data visualization and how it helps in making data-driven decisions. Then, we'll dive into the basics of Matplotlib, exploring how it can be used to transform raw data into informative plots and charts.
+
+By the end of this lab, you'll gain a solid understanding of data visualization principles and be able to create basic plots using Matplotlib.
+
+Setting Up Matplotlib
+Here's a basic code snippet for importing Matplotlib:
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+We'll then create a simple plot to ensure that our setup is working correctly.
+
+Matplotlib Basics
+Matplotlib is versatile, allowing us to create a variety of plot types. This section introduces the basics of creating plots with Matplotlib, including:
+
+Line Plots
+Bar Charts
+Pie Charts
+Scatter Plots
+In futures labs, we'll walk through examples of each, demonstrating how to plot data and customize your charts with titles, labels, and legends. For instance, here's a quick example of a bar chart:
+
+categories = ['Category A', 'Category B', 'Category C']
+values = [23, 45, 56]
+
+plt.bar(categories, values)
+plt.title("Sample Bar Chart")
+plt.xlabel("Categories")
+plt.ylabel("Values")
+plt.show()
+
+Preview
+Now, let's understand better the nature of matplotlib.
+
+Understanding the Object-Oriented Nature of Matplotlib
+Understanding the Object-Oriented Nature of Matplotlib
+Matplotlib is fundamentally built on an object-oriented programming (OOP) model. This means that in Matplotlib, almost everything you see on a plot is an object. Each object can be manipulated independently to control different aspects of the visualization. Understanding this object-oriented approach is crucial for creating more complex and customized plots.
+
+The Two Main Components: Figure and Axes
+Figure Object: The Figure object can be thought of as a canvas or a container that holds all elements of the plot. It includes everything you see on the page – the plot, the axes, labels, titles, and other elements. When you create a plot, you start by creating a Figure object.
+fig = plt.figure()
+Axes Object: The Axes object refers to an individual plot or graph. A Figure can contain multiple Axes. Each Axes has two (or three in the case of 3D) Axis objects which take care of the data limits. The Axes object is where most of the plotting happens: lines, markers, texts, etc.
+ax = fig.add_subplot(1, 1, 1)  # Adding a single Axes to the Figure
+Creating a Plot
+When you create a plot using the object-oriented API, you often start by creating a Figure object. Then, you can add Axes objects to this Figure. Each Axes object can have various elements like lines, text, labels, and legends.
+
+Here's a simple example:
+
+import matplotlib.pyplot as plt
+
+# Create a Figure object
+fig = plt.figure()
+
+# Add an Axes object to the Figure
+ax = fig.add_subplot(1, 1, 1)
+
+# Plot data on the Axes
+ax.plot([1, 2, 3, 4], [10, 20, 25, 30])
+
+# Customize the plot
+ax.set_title('Simple Plot')
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+
+# Display the plot
+plt.show()
+
+Preview
+Another way to create a basic plot in Matplotlib is by explicitly creating a Figure and an Axes object. Here's another example of how you can create a simple plot using this approach:
+
+import matplotlib.pyplot as plt
+
+# Create a Figure and Axes object
+fig, ax = plt.subplots()
+
+# Plot data on the Axes
+ax.plot([1, 2, 3, 4], [10, 20, 25, 30])
+
+# Customize the plot
+ax.set_title('Simple Plot')
+ax.set_xlabel('X-axis')
+ax.set_ylabel('Y-axis')
+
+# Display the plot
+plt.show()
+In this code, you create a Figure and an Axes object using plt.subplots(), and then you plot your data on the Axes. This method is especially useful when you need more control over your plot and when you want to create multiple subplots within the same Figure. It's a flexible way to create a wide range of visualizations using Matplotlib.
+
+Why the Object-Oriented Approach?
+The object-oriented approach provides a more flexible and powerful way of creating visualizations in Matplotlib. It allows for more control and customization over the different elements of the plots. This approach is particularly beneficial when working with multiple plots, complex layouts, or when you need fine-grained control over the visualization elements.
+
+In summary, understanding and utilizing the object-oriented nature of Matplotlib allows you to take full advantage of the library's capabilities, creating both simple and complex visualizations tailored to your specific data analysis needs.
+
+Quiz
+Here's a simpler activity focused on ensuring that the learner can create a basic figure and axis using Matplotlib:
+
+1
+Creating a Figure and Axis in Matplotlib
+
+In this exercise, you'll practice creating a basic figure and an axis object using Matplotlib.
+
+You will need to use the subplots function from Matplotlib to create a Figure (fig) and an Axes (ax). This is a crucial first step in any plotting task and sets the stage for adding data and customizing your plot later on.
+
+Correct!
+2
+Understanding Figures and Axes in Matplotlib
+
+In Matplotlib, what is the difference between a Figure and an Axes?
+
+
+A Figure and an Axes are the same thing in Matplotlib terminology.
+
+
+A Figure is the entire plotting area or canvas, while an Axes is an individual plot within the Figure.
+
+
+A Figure is a type of plot, and an Axes is the canvas where all plots are drawn.
+
+
+A Figure refers to the axes and labels of a plot, whereas an Axes refers to the graph itself.
+
+Correct!
+3
+Create a Basic Line Plot.
+
+In this activity, you will create a basic figure and a single axis. You will plot a simple line chart, using this data: ([2, 4, 6, 8], [15, 30, 45, 60]). This exercise will help you understand the fundamental steps involved in creating plots in Matplotlib.
+
+Expected outcome:
+
+Your chart should like this image:
+
+
+Preview
+Correct!
