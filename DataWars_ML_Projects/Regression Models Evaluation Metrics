@@ -1,0 +1,92 @@
+Linear regression
+Performance metrics are vital for supervised machine learning models. To be sure that your model is doing well in its predictions, you need to evaluate the model. Our goal is to identify how well the model performs on new data.
+
+There are some evaluation metrics that can help you determine whether the model’s predictions are accurate to a certain level of performance.
+
+Here are some commonly used regression evaluation metrics:
+
+Mean Squared Error (MSE): MSE calculates the average squared difference between the predicted and actual values. It gives a measure of the overall model performance, with higher values indicating greater prediction errors.
+
+Root Mean Squared Error (RMSE): RMSE is the square root of MSE and provides a more interpretable measure of the average prediction error.
+
+It is useful for comparing different models or evaluating the model's performance in the original unit of the target variable.
+
+R-squared (R²) Score: R-squared measures the proportion of the variance in the target variable that is explained by the model. It ranges from 0 to 1, with higher values indicating a better fit. However, R-squared alone does not provide information about the accuracy of individual predictions.
+
+Regression Evaluation Metrics
+In this activity, you will practice regression modeling using a simulated dataset. The goal is to create a linear regression model, make predictions, and evaluate the model's performance using regression evaluation metrics.
+
+Let's generate a simulated dataset as:
+
+Let's run the code in the notebook.
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+
+# Simulated dataset
+X = np.random.rand(100, 1)  # Input feature
+y = 3 * X + np.random.randn(100, 1)  # Target variable
+Now, we will make a figure to show the relation between the features and the target variable.
+
+Let's run the code in the notebook.
+
+import matplotlib.pyplot as plt
+
+plt.scatter(X, y)
+plt.xlabel('X')
+plt.ylabel('y')
+plt.title('Simulated Dataset')
+plt.show()
+
+Preview
+Let's split the dataset into train and test sets. The argument test_size is a float value whose value ranges between 0.0 and 1.0, which represents the proportion of our test size. its default value is none. The train_size argument is similar to test_size, but it represents the proportion of our train size.
+
+1
+Use train_test_split to split the data into training and testing sets. Split the dataset in 80% training, 20% testing, and random_state=0.
+
+Set the random_state parameter to 0 value for reproducibility. Store this variable in random_state and then use it in the function.
+
+Store the values in the variables in X_train,X_test,y_train and y_test.
+
+Correct!
+Linear regression
+Let's utilize a linear regression algorithm.
+
+The equation of linear regression can be summarized as
+, where y represents the dependent variable, x represents the independent variable, m represents the slope of the line, and b represents the y-intercept.
+
+The linear regression model is a fundamental machine learning algorithm used for predicting continuous numeric values based on the relationship between independent variables (features) and the dependent variable (target). It assumes a linear relationship between the features and the target variable, aiming to find the best-fit line that minimizes the distance between the predicted values and the actual values.
+
+To implement linear regression in Python, you will need to import the following module:
+
+from sklearn.linear_model import LinearRegression
+2
+Linear Regression
+
+Create an instance of the LinearRegression and store the model in lr.
+
+Correct!
+3
+Train the linear regression model
+
+It's time to train the linear regression model using the training dataset.
+
+Correct!
+4
+Make predictions on the test set
+
+Use the trained model to make predictions on the test data. Store the prediction in y_pred.
+
+Correct!
+5
+Evaluate the model
+
+Calculate the following regression evaluation metrics using the true target values (y_test) and the predicted values:
+
+Mean Squared Error (MSE)
+Root Mean Squared Error (RMSE)
+R-squared (R²) Score
+Store the result in MSE, RMSE and R2 variables.
+
+Correct!
