@@ -1,0 +1,347 @@
+Ever wondered how Nobel Prize winners shape history? In this project, we’re turning raw data into vibrant, eye-catching evolution charts! From trailblazing women like Elinor Ostrom to the genius breakthroughs of Dorothy Crowfoot Hodgkin, we’ll explore how brilliant minds from all over the world have transformed science, economics, and culture. With Matplotlib, we’ll create stunning visuals that bring the stories of these game-changers to life. Get ready for an exciting ride through time, filled with surprises, competition, and the quest for greatness—all while learning some seriously cool data visualization tricks!
+
+Understanding the Dataset
+Column Overview:
+
+Unnamed: 0: This is an index column.
+
+id: A unique identifier for each Nobel Prize. Multiple rows can share the same id if a prize is awarded to more than one laureate.
+
+firstname and surname: The names of the laureates.
+
+born and died: Dates of birth and death.
+
+bornCountry, bornCountryCode, bornCity: Information about the birthplace.
+
+diedCountry, diedCountryCode, diedCity: Information about the place of death.
+
+gender: The gender of the laureate.
+
+year: The year the Nobel Prize was awarded.
+
+category: The category of the Nobel Prize (e.g., economics, chemistry).
+
+share: Indicates how many laureates share the prize (e.g., 2.0 means two laureates shared the prize).
+
+motivation: The reasoning behind the award.
+
+name: The institution or affiliation of the laureate at the time of the award.
+
+city and country: The location of the institution or affiliation.
+
+Why Some Names Appear Twice:
+Shared Prizes: When a Nobel Prize is awarded to multiple laureates, the same id will appear in multiple rows for each laureate who shares the prize. This means that the laureates’ names will be the same, but the name, city, and country columns may differ based on their affiliations. Example: In the case of Elinor Ostrom, she shares the Nobel Prize with another laureate, which results in two rows for the same award year. The differences in the name, city, and country columns indicate her affiliation with different institutions.
+
+Charting the Legends
+1
+Plot a Line Chart to Track the Yearly Evolution of Nobel Prizes Awarded
+
+Using the calculated prizes_per_year series, create a line chart to visualize how the number of Nobel Prizes awarded has evolved over time, using the following parameters:
+
+figure size : 10 by 6
+
+Color : blue
+
+linestyle : -
+
+Marker : o
+
+Title : Evolution of Nobel Prizes Awarded Per Year
+
+xlabel : Year
+
+ylabel : Number of Nobel Prizes Awarded
+
+Don't forget to add a grid to your plot for better readability before you display it.
+
+Expected outcome:
+
+Your plot should look something like this:
+
+
+Preview
+Correct!
+2
+Plot a timeline showing the evolution of Nobel Prize awards over time, classified by category
+
+Use the pre-calculated DataFrame prizes_per_category to plot separate lines depicting each category, using the following details :
+
+figure size : 10 by 6
+
+linestyle : -
+
+Use the Category as the label
+
+Title : Evolution of Nobel Prizes Awarded by Category
+
+xlabel : Year
+
+ylabel : Number of Nobel Prizes Awarded
+
+legend title : Category Dont forget to add a grid before displaying the plot.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+3
+Create a stacked bar chart to visualize the distribution of male vs. female Nobel laureates across different decades.
+
+Using the pre-calculated DataFrame laureates_by_decade_gender, generate a visual representation through a stacked bar chart with the specified parameters. Set the figure size to be 10 by 6 inches and keep the bar width at 1.5. Labels should reflect Male and Female, with the title reading Distribution of Male vs. Female Nobel Laureates by Decade. Both x and y labels should respectively be Decade and Number of Nobel Laureates, and the legend should read Gender. For colors, use blue for male and pink for female on the bars.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+4
+Plot the number of Nobel laureates born in New York over time
+
+Use the pre-calculated series ny_laureates_per_year to create a line chart showing how the number of laureates born in New York changes over time using the following parameters :
+
+figure size : 10 by 6
+
+marker : o
+
+color : green
+
+linestyle : -
+
+Title : Number of Nobel Laureates Born in New York Over Time
+
+xlabel : Year
+
+ylabel :Number of Nobel Laureates Born in New York
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+5
+Use a Multi-line Plot to Show Nobel Prizes Won by Countries over the Decades.
+
+In this activity, your task is to create a visualization of how the number of Nobel Prizes won by various countries has changed over the decades.
+
+Task Instructions:
+
+Use a for loop to iterate over the DataFrame laureates_by_decade_country, which has already been calculated.
+
+Plot each country as a separate line on the chart.
+
+Parameters for the plot should be: - Figure size: 10 by 6
+
+Country as label
+
+Marker: o
+
+Title: "Nobel Prizes Won by Country Over the Decades"
+
+xlabel: "Decade"
+
+ylabel: "Number of Nobel Prizes Won"
+
+Set the legend title to "Country", select the location to "center left", and bbox_to_anchor to (1, 0.5).
+
+Lastly, add a grid and adjust the plot's layout by using (0, 0, 0.85, 1) to ensure proper resizing and leaving enough space for the legend on the far right.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+6
+Create a line chart showing the number of laureates affiliated with Harvard over the years.
+
+Use the series harvard_laureates_per_year to create a line chart using the following specifications:
+
+Figure size : 10 by 6
+
+Marker : o
+
+Linestyle : -
+
+Color : green
+
+Title : Nobel Laureates Affiliated with Harvard Over the Years
+
+xlabel : Year
+
+ylabel : Number of Laureates
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+7
+Create a Line Chart to Showcase the Average Age of Laureates Winning the Nobel Prize, by Year
+
+Using the previously made series, avg_age_by_year, which calculates the average age per laureate at the time of their Nobel Prize win, create a line plot, with the parameters set as follows:
+
+figure size : 10 by 6
+
+marker : o
+
+Linestyle : -
+
+Color : blue
+
+Title : Average Age of Nobel Laureates at Time of Winning (by Year)
+
+xlabel : Year
+
+ylabel : Average Age at Winning
+
+Finally, add a grid and display the plot.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+8
+Generate a Plot for the Percentage of Shared Nobel Prizes Over Time.
+
+Use the calculated series percentage_shared_prizes to plot the percentage of shared prizes over time using the following parameters :
+
+figure size : 10 by 6
+
+marker : o
+
+Linestyle : -
+
+Color : purple
+
+Title : Percentage of Nobel Prizes Shared by Multiple Winners Over Time
+
+xlabel : Year
+
+ylabel : Percentage of Shared Prizes
+
+Finally, add a grid and display the plot.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+9
+Use a line chart to visualize how the length of Nobel Prize motivations (number of words in motivation column) has evolved over time.
+
+Plot the average word count over the years using the calculated series avg_word_count_by_year, using the following parameters :
+
+figure size : 10 by 6
+
+marker : v
+
+Linestyle : -
+
+Color : orange
+
+Title : Evolution of Nobel Prize Motivation Length Over Time
+
+xlabel : Year
+
+ylabel : Average Word Count of Motivation
+
+Finally, add gridlines and display the plot.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+10
+Create a Bar Chart of Cities Producing the Most Nobel Laureates
+
+Use the calculated series city_counts to plot this information.
+
+figure size : 10 by 6
+
+Color : skyblue
+
+Title : Top Cities Producing the Most Nobel Laureates
+
+xlabel : City
+
+ylabel :Number of Nobel Laureates Add a 45-degree rotation to the labels on the x-axis for better visibility. Once all the details are in place, use .tight_layout to display the plot.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+11
+Compare Lifespans of Nobel Laureates
+
+Refer to the column lifespan you have calculated earlier. Use this data to draw a histogram representing the lifespans of Nobel Prize winners. The settings for your plot parameters should be as follows:
+
+Set the figure size to 10x6.
+
+Use 10 bins for the histogram.
+
+The edgecolor should be black.
+
+Use skyblue as the color for your histogram bars.
+
+Title your graph as Distribution of Nobel Laureates' Lifespans.
+
+Label the x-axis as Lifespan (Years).
+
+Label the y-axis as Number of Nobel Laureates.
+
+Once complete, use .tight_layout and display your final output.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
+12
+Analyze the Evolution of Female Representation in Nobel Prizes
+
+Plot the evolution of Female Nobel Prize winners from the provided series female_trend. Use the specifications below for the line chart:
+
+figure size : 10 by 6
+
+marker : o
+
+Color : purple
+
+Title : Trend of Female Nobel Laureates Over Time
+
+xlabel : Year
+
+ylabel : Number of Female Laureates
+
+Once complete, use .tight_layout and display your final output.
+
+Expected outcome:
+
+Your plot should match the image below :
+
+
+Preview
+Correct!
