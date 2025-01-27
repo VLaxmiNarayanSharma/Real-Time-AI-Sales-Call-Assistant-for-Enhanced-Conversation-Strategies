@@ -1,0 +1,85 @@
+Activities
+We'll be working with the Bike Sharing Dataset from the Laboratory of Artificial Intelligence and Decision Support (LIAAD), University of Porto.
+
+This dataset contains the daily count of rental bikes between years 2011 and 2012 in Capital bikeshare system with the corresponding weather and seasonal information.
+
+This project is for beginners who are looking to practice the know-how of presenting the insights effectively. We will cover various visualization types ranging from histogram, box plot, to scatter plot in this project.
+
+Let us get started!
+
+Activities
+1
+Plot the Histogram
+
+Create a histogram to visualize the distribution of bike counts from the bike_df dataset. This visualization will provide insights into the frequency and spread of bike usage, enabling you to analyze patterns in bike count data.
+
+Your task includes ensuring that the histogram is properly labeled and titled for clarity.
+
+Use (10,8) as your plot size
+Use title as "Bike Count Distribution"
+Use x-axis label as "Bike Count"
+Use y-axis label as "Frequency"
+Use 30 bins for the histogram
+Use color as "skyblue" and bins as 30
+Expected outcome:
+
+Your plot should look like this:
+
+
+Preview
+Correct!
+2
+Plot the Box-plot
+
+Create a series of box plots to explore the distribution of bike counts ('cnt') across different seasons using the bike_df dataset. This analysis will help you understand how bike usage varies with the seasons, highlighting trends and outliers in bike counts for each season.
+
+Your task is to ensure that each box plot is correctly labeled and the overall figure is titled for clear interpretation. A custom palette has been predefined for you, pass it as an argument when plotting your chart.
+
+Use (10,6) as your plot size
+Set palette as the custom palette, the hue as 'season' and legend as 'False'.
+Use title as "Distribution of Counts by Season"
+Use x-axis label as "Season"
+Use y-axis label as "Count"
+Expected outcome:
+
+Your plot should look like this: imageDescription
+
+Correct!
+3
+Plot the Scatter plot
+
+Create a scatter plot to visualize the relationship between the total count of bike rentals ('cnt') and the temperature ('temp') using the bike_df dataset. This visualization will enable you to analyze how changes in temperature relate to the usage of bikes, potentially revealing trends or patterns in bike rentals depending on temperature variations.
+
+Your task involves generating a clear and informative scatter plot. We will guide you in setting up the labels and title for the plot.
+
+Use (10,6) as your plot size
+Use title as "Bike Count vs. Temperature"
+Use x-axis label as "Temperature"
+Use y-axis label as "Bike Count"
+Use color as "green"
+Expected outcome:
+
+Your plot should look like this:
+
+
+Preview
+Correct!
+4
+Plot the Scatter plot with dual-color coding
+
+Create a scatter plot to examine the relationship between the number of casual bike rentals ('casual') and the temperature ('temp'), differentiated by season, using the bike_df dataset. This visualization will help you explore how temperature affects casual bike usage and how this pattern varies with the seasons.
+
+Your task is to generate a scatter plot with dual-color coding to represent different seasons. We will guide you in setting up the labels and title for the plot. A custom color set has been predefined for you, pass it as an argument when plotting your chart.
+
+Use (10,6) as your plot size
+Use title as "Casual Bike Count vs. Temperature by Season"
+Use x-axis label as "Temperature"
+Use y-axis label as "Casual Bike Count"
+Use color red if season is 1, blue if season is 2, green if season is 3, and orange if season is 4.
+Expected outcome:
+
+Your plot should look like this:
+
+
+Preview
+Correct!
